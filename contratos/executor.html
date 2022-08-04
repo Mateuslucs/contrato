@@ -8,20 +8,115 @@
 </head>
 <body>
     <head>
-        <h1>dados para o documento</h1>
+        <h1>Dados para o documento</h1>
     </head>
     <section>
         <form action="" method="post">
             <fieldset>
                 <legend>LOCADOR</legend>
-                <p><label for="locador">Nome: </label><input type="text" name="nome" id="locador"></p>
-                <p><label for="rglocador">RG: </label><input type="text" name="rg" id="rglocador" maxlength="10" autocomplete="off"></p>
-                <p><label for="oglocador">Orgão expedidor: </label><input type="text" name="og" id="oglocador" size="4" placeholder="Ex.: SDS"></p>
-                <p><label for="locallocador">Estado da expedição: </label><input type="text" name="local" id="locallocador" placeholder="Ex.: PE"></p>
-                <p><label for="cpflocador">CPF: </label><input type="text" name="cpf" id="cpflocador" maxlength="14" autocomplete="off"></p>
-                <p><label for="nacionalidadelocador">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocador"></p>
-                <p>Estado civil: <input type="radio" name="civil" id="solteirolocador"><label for="solteirolocador">Solteiro(a)</label> <input type="radio" name="civil" id="casadolocador"><label for="casadolocador">Casado(a)</label></p>
-                <p><label for="profissaolocador">Profissão: </label><input type="text" name="profissao" id="profissaolocador"></p>
+                <fieldset>
+                    <legend>Dados</legend>
+                    <p><label for="locador">Nome: </label><input type="text" name="nome" id="locador"></p>
+                    <p><label for="rglocador">RG: </label><input type="text" name="rg" id="rglocador" class="rg" maxlength="10" autocomplete="off"></p>
+                    <p><label for="oglocador">Orgão expedidor: </label><input type="text" name="og" id="oglocador" size="4" placeholder="Ex.: SDS"></p>
+                    <p><label for="locallocador">Estado da expedição: </label><input type="text" name="local" id="locallocador" placeholder="Ex.: PE"></p>
+                    <p><label for="cpflocador">CPF: </label><input type="text" name="cpf" id="cpflocador" class="cpflocador" maxlength="14" autocomplete="off"></p>
+                    <p>Sexo: <input type="radio" name="sexolocador" id="masculinolocador" checked><label for="masculinolocador" >Masculino</label> <input type="radio" name="sexolocador" id="femininolocador"><label for="femininolocador">Feminino</label></p>
+                    <p><label for="nacionalidadelocador">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocador"></p>
+                    <p>Estado civil: <input type="radio" name="civillocador" id="solteirolocador" checked><label for="solteirolocador">Solteiro(a)</label> <input type="radio" name="civillocador" id="casadolocador"><label for="casadolocador">Casado(a)</label></p>
+                    <p><label for="profissaolocador">Profissão: </label><input type="text" name="profissao" id="profissaolocador"></p>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>LOCATARIO (1)</legend>
+                <fieldset>
+                    <legend>Dados</legend>
+                    <p><label for="locatario1">Nome: </label><input type="text" name="nome" id="locatario1"></p>
+                    <p><label for="rglocatario1">RG: </label><input type="text" name="rg" id="rglocatario1" class="rg" maxlength="10" autocomplete="off"></p>
+                    <p><label for="oglocatario1">Orgão expedidor: </label><input type="text" name="og" id="oglocatario1" size="4" placeholder="Ex.: SDS"></p>
+                    <p><label for="locallocatario1">Estado da expedição: </label><input type="text" name="local" id="locallocatario1" placeholder="Ex.: PE"></p>
+                    <p><label for="cpflocatario1">CPF: </label><input type="text" name="cpf" id="cpflocatario1" class="cpflocatario1" maxlength="14" autocomplete="off"></p>
+                    <p>Sexo: <input type="radio" name="sexolocatario1" id="masculinolocatario1" checked><label for="masculinolocatario1" >Masculino</label> <input type="radio" name="sexolocatario1" id="femininolocatario1"><label for="femininolocatario1">Feminino</label></p>
+                    <p><label for="nacionalidadelocatario1">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocatario1"></p>
+                    <p>Estado civil: <input type="radio" name="civillocatario1" id="solteirolocatario1" checked><label for="solteirolocatario1">Solteiro(a)</label> <input type="radio" name="civillocatario1" id="casadolocatario1"><label for="casadolocatario1">Casado(a)</label></p>
+                    <p><label for="profissaolocatario1">Profissão: </label><input type="text" name="profissao" id="profissaolocatario1"></p>
+                </fieldset>
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <p><label for="rualocatario1">Rua: </label><input type="text" name="rua" id="rualocatario1"> <label for="numerolocatario1">Nº: </label><input type="number" name="rua" id="numerolocatario1"></p>
+                    <p><label for="residenciallocatario1">Complemento: </label><input type="text" name="residencial" id="residenciallocatario1" placeholder="Ex.: Res. jangadeiro - Bloco 00 - APT 000"></p>
+                    <p><label for="cidadelocatario1">Cidade: </label><input type="text" name="cidade" id="cidadelocatario1" placeholder="Ex.: Jaboatão dos Guararapes"></p>
+                    <p><label for="ceplocatario1">CEP: </label><input type="text" name="cep" id="cep1" class="cep1"  maxlength="10"></p>
+                </fieldset>
+                <fieldset>
+                    <legend>Contato</legend>
+                    <p>Contato: <input type="text" name="ddd" id="dddlocatario1" class="ddd1" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato" class="contato1" id="contatolocatario1" maxlength="10" placeholder="00000-0000"></p>
+                    <p><label for="imaillocatario1">Imail: </label><input type="email" name="imail" id="imaillocatario1"></p>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>LOCATARIO (2)</legend>
+                <fieldset>
+                    <legend>Dados</legend>
+                    <p><label for="locatario2">Nome: </label><input type="text" name="nome" id="locatario2"></p>
+                    <p><label for="rglocatario2">RG: </label><input type="text" name="rg" id="rglocatario2" class="rg" maxlength="10" autocomplete="off"></p>
+                    <p><label for="oglocatario2">Orgão expedidor: </label><input type="text" name="og" id="oglocatario2" size="4" placeholder="Ex.: SDS"></p>
+                    <p><label for="locallocatario2">Estado da expedição: </label><input type="text" name="local" id="locallocatario2" placeholder="Ex.: PE"></p>
+                    <p><label for="cpflocatario2">CPF: </label><input type="text" name="cpf" id="cpflocatario2" class="cpflocatario2" maxlength="14" autocomplete="off"></p>
+                    <p>Sexo: <input type="radio" name="sexolocatario2" id="masculinolocatario2" checked><label for="masculinolocatario2" >Masculino</label> <input type="radio" name="sexolocatario2" id="femininolocatario2"><label for="femininolocatario2">Feminino</label></p>
+                    <p><label for="nacionalidadelocatario2">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocatario2"></p>
+                    <p>Estado civil: <input type="radio" name="civillocatario2" id="solteirolocatario2" checked><label for="solteirolocatario2">Solteiro(a)</label> <input type="radio" name="civillocatario2" id="casadolocatario2"><label for="casadolocatario2">Casado(a)</label></p>
+                    <p><label for="profissaolocatario2">Profissão: </label><input type="text" name="profissao" id="profissaolocatario2"></p>
+                </fieldset>
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <p><label for="rualocatario2">Rua: </label><input type="text" name="rua" id="rualocatario2"> <label for="numerolocatario2">Nº: </label><input type="number" name="rua" id="numerolocatario2"></p>
+                    <p><label for="residenciallocatario2">Complemento: </label><input type="text" name="residencial" id="residenciallocatario2" placeholder="Ex.: Res. jangadeiro - Bloco 00 - APT 000"></p>
+                    <p><label for="cidadelocatario2">Cidade: </label><input type="text" name="cidade" id="cidadelocatario2" placeholder="Ex.: Jaboatão dos Guararapes"></p>
+                    <p><label for="ceplocatario2">CEP: </label><input type="text" name="cep" id="ceplocatario2" class="cep2" maxlength="10"></p>
+                </fieldset>
+                <fieldset>
+                    <legend>Contato</legend>
+                    <p>Contato: <input type="text" name="ddd" id="dddlocatario2" class="ddd2" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato2" class="contato2" id="contatolocatario2" maxlength="10" placeholder="00000-0000"></p>
+                    <p><label for="imaillocatario2">Imail: </label><input type="email" name="imail" id="imaillocatario2"></p>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>CAUÇÃO</legend>
+                <P><label for="valorcauçao">Valor da caução: </label><input type="text" name="valor" id="valorcauçao"></P>
+                <p><label for="Valorcauçaoescrito">Valor escrito: </label><input type="text" name="valor" id="Valorcauçaoescrito"></p>
+            </fieldset>
+            <fieldset>
+                <legend>Imóvel</legend>
+                <p><label for="residencia">Residencial: </label><input type="text" name="residencia" id="residencia"></p>
+                <p><label for="apt">Apartamento: </label><input type="text" name="apt" id="apt" size="3"> <label for="bloco">Bloco: </label><input type="text" name="bloco" id="bloco" size="3"></p>
+                <p><label for="rua">Rua: </label><input type="text" name="rua" id="rua"> <label for="numero">Nº: </label><input type="number" name="rua" id="numero"></p>
+                <p><label for="bairro">Bairro: </label><input type="text" name="bairro" id="bairro"></p>
+                <p><label for="cidade">Cidade: </label><input type="text" name="cidade" id="cidade"></p>
+                <p><label for="estado">Estado: </label><input type="text" name="estado" id="estado"></p>
+                <p><label for="cep">CEP: </label><input type="text" name="cep" id="cep" class="cepimovel" maxlength="10"></p>
+            </fieldset>
+            <fieldset>
+                <legend>PRAZO DE LOCAÇÃO</legend>
+                <p><label for="prazodelocaçao">prazo de locação: </label><input type="number" name="prazo" id="prazodelocaçao" placeholder="Meses"></p>
+                <p><label for="prazodelocaçaoescrito">prazo de locação (escrito): </label><input type="text" name="prazo" id="prazodelocaçaoescrito"></p>
+                <fieldset>
+                    <legend>Início</legend>
+                    <p><label for="diadoprazoin">Dia do prazo: </label><input type="number" name="dia" id="diadoprazoin"></p>
+                    <p><label for="mesdoprazoin">Mês do prazo: </label><input type="text" name="mes" id="mesdoprazoin" placeholder="Ex.: Janeiro"></p>
+                    <p><label for="anodoprazoin">Ano do prazo: </label><input type="number" name="ano" id="anodoprazoin"></p>
+                </fieldset>
+                <fieldset>
+                    <legend>Fim</legend>
+                    <p><label for="diadoprazofim">Dia do prazo: </label><input type="number" name="dia" id="diadoprazofim"></p>
+                    <p><label for="mesdoprazofim">Mês do prazo: </label><input type="text" name="mes" id="mesdoprazofim" placeholder="Ex.: Janeiro"></p>
+                    <p><label for="anodoprazofim">Ano do prazo: </label><input type="number" name="ano" id="anodoprazofim"></p>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>ALUGUEL MENSAL</legend>
+                <p><label for="valor">Valor do aluguel: </label><input type="text" name="valor" id="valor"></p>
+                <p><label for="valorescrito">Valor (escrito): </label><input type="text" name="valor" id="valorescrito"></p>
             </fieldset>
         </form>
     </section>
