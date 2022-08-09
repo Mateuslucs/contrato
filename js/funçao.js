@@ -1,5 +1,5 @@
-/*Formatação dos input*/
-let rg = document.querySelector('input.rg')
+/*Formatação do RG*/
+let rg = document.getElementById('rglocador')
 rg.addEventListener('keypress', function(e) {
     let rglen = rg.value.length
     if(!fnum(e)){
@@ -8,8 +8,26 @@ rg.addEventListener('keypress', function(e) {
         rg.value += '.'
     }    
 })
-/*Formação do cpf*/ 
-let cpf = document.querySelector('input.cpflocador')
+let rg1 = document.getElementById('rglocatario1')
+rg1.addEventListener('keypress', function(e){
+    let rg1len = rg1.value.length
+    if(!fnum(e)){
+        e.preventDefault()
+    }else if(rg1len == 2 || rg1len == 6){
+        rg1.value += '.'
+    }
+})
+let rg2 = document.getElementById('rglocatario2')
+rg2.addEventListener('keypress', function(e){
+    let rg2len = rg2.value.length
+    if(!fnum(e)){
+        e.preventDefault()
+    }else if(rg2len == 2 || rg2len == 6){
+        rg2.value += '.'
+    }
+})
+/*Formação do CPF*/ 
+let cpf = document.getElementById('cpflocador')
 cpf.addEventListener('keypress', function(e){
     let cpflen = cpf.value.length
     if(!fnum(e)){
@@ -21,7 +39,7 @@ cpf.addEventListener('keypress', function(e){
         cpf.value += '-'
     }
 })
-let cpf1 = document.querySelector('input.cpflocatario1')
+let cpf1 = document.getElementById('cpflocatario1')
 cpf1.addEventListener('keypress', function(e){
     let cpflen = cpf1.value.length
     if(!fnum(e)){
@@ -33,7 +51,7 @@ cpf1.addEventListener('keypress', function(e){
         cpf1.value += '-'
     }
 })
-let cpf2 = document.querySelector('input.cpflocatario2')
+let cpf2 = document.getElementById('cpflocatario2')
 cpf2.addEventListener('keypress', function(e){
     let cpflen = cpf2.value.length
     if(!fnum(e)){
@@ -45,7 +63,7 @@ cpf2.addEventListener('keypress', function(e){
         cpf2.value += '-'
     }
 })
-/*Formação do cep*/
+/*Formação do CEP*/
 let cep1 = document.querySelector('input.cep1')
 cep1.addEventListener('keypress', function(e){
     let ceplen = cep1.value.length
@@ -79,7 +97,7 @@ cepimovel.addEventListener('keypress', function(e){
         cepimovel.value += '-'
     }
 })
-/*Formação contato*/
+/*Formação CONTATO*/
 let ddd1 = document.querySelector('input.ddd1')
 ddd1.addEventListener('keypress', function(e){
     if(!fnum(e)){
@@ -110,11 +128,29 @@ contato2.addEventListener('keypress', function(e){
         contato2.value += '-'
     }
 })
-/*Formação função*/
+/*Formatação só numero*/
 function fnum(e){
     const char = String.fromCharCode(e.keyCode)
     const pattern = '[0-9]'
     if(char.match(pattern)){
         return true
     }
+}
+/*Inserindo dados no documento*/
+function doc(){
+
+    /*DADOS LOCADOR*/
+
+    let nome_locador = document.getElementById('locador')
+    let rg_locador = document.getElementById('rglocador')
+
+    let locadortx = document.querySelectorAll('.locadortx')
+    locadortx.forEach(ele => {
+        ele.textContent = `${nome_locador.value}`.toUpperCase()
+    })
+    let rgtx = document.querySelectorAll('.rglocador')
+    rg_locador.forEach(ele => {
+        ele.textContent = `${rg_locador.value}`
+    })
+    
 }
