@@ -1,0 +1,9 @@
+@charset "UTF8";
+
+.item {
+    background-color: yellow;
+    margin: 10px;
+}
+strong{
+    text-transform: uppercase;
+}
