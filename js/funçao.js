@@ -1,3 +1,22 @@
+/*DATA*/
+let data = new Date()
+let dia_atualtx =  document.querySelectorAll('#dia')
+let mes_atualtx = document.querySelectorAll('#mes')
+dia_atualtx.forEach(ele => {
+    ele.textContent = `${data.getDate()}`
+})
+mes_atualtx.forEach(ele => {
+    ele.textContent = `${data.getMonth()}`
+})
+/*Formatação só numero*/
+function fnum(e){
+    const char = String.fromCharCode(e.keyCode)
+    const pattern = '[0-9]'
+    if(char.match(pattern)){
+        return true
+    }
+}
+
 /*Formatação do RG*/
 let rg = document.getElementById('rglocador')
 rg.addEventListener('keypress', function(e) {
@@ -484,12 +503,119 @@ function doc(){
     caucaotx.forEach(ele => {
         ele.textContent = `${caucao.value}`
     })
-}
-/*Formatação só numero*/
-function fnum(e){
-    const char = String.fromCharCode(e.keyCode)
-    const pattern = '[0-9]'
-    if(char.match(pattern)){
-        return true
-    }
+    caucao_escritotx.forEach(ele => {
+        ele.textContent = `${caucao_escrito.value}`
+    })
+
+    /*Dados do IMOVEL*/
+
+    let residencial_imovel = document.getElementById('residencia') 
+    let bloco_imovel = document.getElementById('bloco')
+    let apartamento_imovel = document.getElementById('apt')
+    let rua_imovel = document.getElementById('rua')
+    let numero_imovel = document.getElementById('numero')
+    let bairro_imovel = document.getElementById('bairro')
+    let cidade_imovel = document.getElementById('cidade')
+    let estado_imovel = document.getElementById('estado')
+    let cep_imovel = document.getElementById('cep')
+
+    /*preenchendo dados do IMOVEL*/
+    let residencial_imoveltx = document.querySelectorAll('.residencia')
+    let bloco_imoveltx = document.querySelectorAll('.bloco')
+    let apartamento_imoveltx = document.querySelectorAll('.apt')
+    let rua_imoveltx = document.querySelectorAll('.rua')
+    let numero_imoveltx = document.querySelectorAll('.numero')
+    let bairro_imoveltx = document.querySelectorAll('.bairro')
+    let cidade_imoveltx = document.querySelectorAll('.cidade')
+    let estado_imoveltx = document.querySelectorAll('.estado')
+    let cep_imoveltx = document.querySelectorAll('.cep')
+
+    residencial_imoveltx.forEach(ele => {
+        ele.textContent = `${residencial_imovel.value}`
+    })
+    bloco_imoveltx.forEach(ele => {
+        ele.textContent = `${bloco_imovel.value}`
+    })
+    apartamento_imoveltx.forEach(ele => {
+        ele.textContent = `${apartamento_imovel.value}`
+    })
+    rua_imoveltx.forEach(ele => {
+        ele.textContent = `${rua_imovel.value}`
+    })
+    numero_imoveltx.forEach(ele => {
+        ele.textContent = `${numero_imovel.value}`
+    })
+    bairro_imoveltx.forEach(ele => {
+        ele.textContent = `${bairro_imovel.value}`
+    })
+    cidade_imoveltx.forEach(ele => {
+        ele.textContent = `${cidade_imovel.value}`
+    })
+    estado_imoveltx.forEach(ele => {
+        ele.textContent = `${estado_imovel.value}`
+    })
+    cep_imoveltx.forEach(ele => {
+        ele.textContent = `${cep_imovel.value}`
+    })
+
+    /*Dados do PRAZO DE LOCAÇÃO*/
+
+    let prazo_locaçao = document.getElementById('prazodelocaçao')
+    let prazo_locacaçoescrito = document.getElementById('prazodelocaçaoescrito')
+    let dia_prazo_inicio = document.getElementById('diadoprazoin')
+    let mes_prazo_inicio = document.getElementById('mesdoprazoin')
+    let ano_prazo_inicio = document.getElementById('anodoprazoin')
+    let dia_prazo_fim = document.getElementById('diadoprazofim')
+    let mes_prazo_fim = document.getElementById('mesdoprazofim')
+    let ano_prazo_fim = document.getElementById('anodoprazofim')
+
+    /*Preenchendo PRAZO DE LOCAÇÃO*/
+    let prazo_locaçaotx = document.querySelectorAll('.prazodelocaçao')
+    let prazo_locacaçoescritotx = document.querySelectorAll('.prazodelocaçaoescrito')
+    let dia_prazo_iniciotx = document.querySelectorAll('.diadoprazoin')
+    let mes_prazo_iniciotx = document.querySelectorAll('.mesdoprazoin')
+    let ano_prazo_iniciotx = document.querySelectorAll('.anodoprazoin')
+    let dia_prazo_fimtx = document.querySelectorAll('.diadoprazofim')
+    let mes_prazo_fimtx = document.querySelectorAll('.mesdoprazofim')
+    let ano_prazo_fimtx = document.querySelectorAll('.anodoprazofim')
+
+    prazo_locaçaotx.forEach(ele => {
+        ele.textContent = `${prazo_locaçao.value}`
+    })
+    prazo_locacaçoescritotx.forEach(ele => {
+        ele.textContent = `${prazo_locacaçoescrito.value}`
+    })
+    dia_prazo_iniciotx.forEach(ele => {
+        ele.textContent = `${dia_prazo_inicio.value}`
+    })
+    mes_prazo_iniciotx.forEach(ele => {
+        ele.textContent = `${mes_prazo_inicio.value}`
+    })
+    ano_prazo_iniciotx.forEach(ele => {
+        ele.textContent = `${ano_prazo_inicio.value}`
+    })
+    dia_prazo_fimtx.forEach(ele => {
+        ele.textContent = `${dia_prazo_fim.value}`
+    })
+    mes_prazo_fimtx.forEach(ele => {
+        ele.textContent = `${mes_prazo_fim.value}`
+    })
+    ano_prazo_fimtx.forEach(ele => {
+        ele.textContent = `${ano_prazo_fim.value}`
+    })
+
+    /*Dados do ALUGUEL MENSAL*/
+
+    let valor_aluguel = document.getElementById('valor')
+    let valor_aluguelescrito = document.getElementById('valorescrito')
+    let valor_alugueltx = document.querySelectorAll('.valor')
+    let valor_aluguelescritotx = document.querySelectorAll('.valorescrito')
+
+    valor_alugueltx.forEach(ele => {
+        ele.textContent = `${valor_aluguel.value}`
+    })
+    valor_aluguelescritotx.forEach(ele => {
+        ele.textContent = `${valor_aluguelescrito.value}`
+    })
+    
 }
