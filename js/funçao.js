@@ -1,12 +1,54 @@
 /*DATA*/
 let data = new Date()
+let mes_atual = data.getMonth()
+
+
+switch(mes_atual){
+    case(0):
+        mes_atual = 'janeiro'
+        break
+    case(1):
+        mes_atual = 'fervereiro'
+        break
+    case(2):
+        mes_atual = 'março'
+        break
+    case(3):
+        mes_atual = 'abril'
+        break
+    case(4):
+        mes_atual = 'maio'
+        break
+    case(5):
+        mes_atual = 'junho'
+        break
+    case(6):
+        mes_atual = 'julho'
+        break
+    case(7):
+        mes_atual = 'agosto'
+        break
+    case(8):
+        mes_atual = 'setembro'
+        break
+    case(9):
+        mes_atual = 'outubro'
+        break
+    case(10):
+        mes_atual = 'novembro'
+        break
+    case(11):
+        mes_atual = 'dezembro'
+        break
+    
+}
 let dia_atualtx =  document.querySelectorAll('#dia')
 let mes_atualtx = document.querySelectorAll('#mes')
 dia_atualtx.forEach(ele => {
     ele.textContent = `${data.getDate()}`
 })
 mes_atualtx.forEach(ele => {
-    ele.textContent = `${data.getMonth()}`
+    ele.textContent = `${mes_atual}`
 })
 /*Formatação só numero*/
 function fnum(e){
@@ -603,6 +645,38 @@ function doc(){
     ano_prazo_fimtx.forEach(ele => {
         ele.textContent = `${ano_prazo_fim.value}`
     })
+
+    /*Formatação do prazo data só numeros*/
+
+    let mes_atualnumeroin = document.querySelectorAll('.mesdoprazonumin')
+    let mes_atualnumerofim = document.querySelectorAll('.mesdoprazonumfim')
+    let meses = ['janeiro', 'fervereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+    for(var i = 0; i < meses.length; i++){
+        if(i > 9){
+            if(mes_prazo_inicio.value == meses[i]){
+                mes_atualnumeroin.forEach(ele => {
+                    ele.textContent = `${i+1}`
+                })
+            }
+            if(mes_prazo_fim.value == meses[i]){
+                mes_atualnumerofim.forEach(ele => {
+                    ele.textContent = `${i+1}`
+                })
+            }
+        }else{
+            if(mes_prazo_inicio.value == meses[i]){
+                mes_atualnumeroin.forEach(ele => {
+                    ele.textContent = `0${i+1}`
+                })
+            }
+            if(mes_prazo_fim.value == meses[i]){
+                mes_atualnumerofim.forEach(ele => {
+                    ele.textContent = `0${i+1}`
+                })
+            }
+        }
+        
+    }
 
     /*Dados do ALUGUEL MENSAL*/
 
