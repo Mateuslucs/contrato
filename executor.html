@@ -119,7 +119,9 @@
                 <p><label for="valor">Valor do aluguel: </label><input type="number" name="valor" id="valor"></p>
                 <p><label for="valorescrito">Valor (escrito): </label><input type="text" name="valor" id="valorescrito"></p>
             </fieldset>
-            <input type="button" value="ENVIAR" onclick="doc()"><input type="reset" id="limpar" value="LIMPAR">
+            <input type="button" value="ENVIAR" onclick="doc()">
+            <input type="button" class="botao"  value="BAIXAR" onclick="baixar()">
+            <input type="reset" class="botao" value="LIMPAR">
         </form>
         
     </section>
@@ -324,6 +326,7 @@
         
          
     </section>
-    <script src="js/funçao.js"></script>
+    <script src="js/dados.js"></script>
+    <script src="js/download.js" type="module"></script>
 </body>
 </html>

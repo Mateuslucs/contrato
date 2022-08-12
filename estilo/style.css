@@ -15,11 +15,10 @@ body {
 strong{
     text-transform: uppercase;
 }
-#limpar {
+.botao {
     margin-left: 10px;
 }
 #documento {
-    
     display: block;
     text-align: justify;
 }
