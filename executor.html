@@ -120,14 +120,14 @@
                 <p><label for="valorescrito">Valor (escrito): </label><input type="text" name="valor" id="valorescrito"></p>
             </fieldset>
             <input type="button" value="ENVIAR" onclick="doc()">
-            <input type="button" class="botao"  value="BAIXAR" onclick="baixar()">
+            <input type="button" class="botao"  value="COPIAR" id="copiar" onclick="clicar()">
             <input type="reset" class="botao" value="LIMPAR">
         </form>
         
     </section>
     <section id="documento">
         <header>
-            <h1>CONTRATO DE LOCAÇÃO</h1>
+            <h1 >CONTRATO DE LOCAÇÃO</h1>
             <h1>RESIDENCIAL</h1>
         </header>
         
@@ -327,6 +327,5 @@
          
     </section>
     <script src="js/dados.js"></script>
-    <script src="js/download.js" type="module"></script>
 </body>
 </html>

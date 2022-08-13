@@ -1,5 +1,4 @@
 
-
 /*DATA*/
 let data = new Date()
 let mes_atual = data.getMonth()
@@ -10,7 +9,7 @@ switch(mes_atual){
         mes_atual = 'janeiro'
         break
     case(1):
-        mes_atual = 'fervereiro'
+        mes_atual = 'fevereiro'
         break
     case(2):
         mes_atual = 'março'
@@ -695,8 +694,6 @@ function doc (){
     })
     
 }
-
-    
-    
+  
 
     

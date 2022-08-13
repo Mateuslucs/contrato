@@ -1,5 +1,8 @@
+
 const fs = require('fs')
 
+const nome_arquivo = '/../contratos/caução.doc'
+const path = __dirname + `${nome_arquivo}`
 function leitorDeArquivo(caminho){
     fs.readFile(caminho, 'utf-8', function(error,data){
         if(error){
@@ -9,21 +12,22 @@ function leitorDeArquivo(caminho){
         }
     })
 }
-export default class down {
-    nome_arquivo = '/../contratos/caução.doc'
-    path = __dirname + `${nome_arquivo}`
-    escritorDeArquivo(caminho,texto){
-        fs.writeFile(caminho, texto, function(error){
-            if(error){
-                console.log('erro de escrita'+ error.message)
-            }else {
-                console.log('escreveu com sucesso em '+ caminho)
-            }
-        })
-    }
-}
- 
 
-escritorDeArquivo(path, 'merda')
+function escritorDeArquivo(caminho,texto){
+    fs.writeFile(caminho, texto, function(error){
+        if(error){
+            console.log('erro de escrita'+ error.message)
+        }else {
+            console.log('escreveu com sucesso em '+ caminho)
+        }
+    })
+}
+
+escritorDeArquivo(path, 'ola mundo')
+
+
+
+
+
 
 
