@@ -18,7 +18,7 @@
                 <fieldset>
                     <legend>Dados</legend>
                     <p><label for="locador">Nome: </label><input type="text" name="nome" id="locador"></p>
-                    <p><label for="rglocador">RG: </label><input type="text" name="rg" id="rglocador" class="rglocador" maxlength="10" autocomplete="off"></p>
+                    <p><label for="rglocador">RG: </label><input type="text" name="rg" id="rglocador" class="rg" maxlength="10" autocomplete="off"></p>
                     <p><label for="oglocador">Orgão expedidor: </label><input type="text" name="og" id="oglocador" size="4" placeholder="Ex.: SDS"></p>
                     <p><label for="locallocador">Estado da expedição: </label><input type="text" name="local" id="locallocador" placeholder="Ex.: PE"></p>
                     <p><label for="cpflocador">CPF: </label><input type="text" name="cpf" id="cpflocador" class="cpflocador" maxlength="14" autocomplete="off"></p>
@@ -60,7 +60,7 @@
                 <fieldset>
                     <legend>Dados</legend>
                     <p><label for="locatario2">Nome: </label><input type="text" name="nome" id="locatario2"></p>
-                    <p><label for="rglocatario2">RG: </label><input type="text" name="rg" id="rglocatario2" class="rglocatario2" maxlength="10" autocomplete="off"></p>
+                    <p><label for="rglocatario2">RG: </label><input type="text" name="rg" id="rglocatario2" class="rg" maxlength="10" autocomplete="off"></p>
                     <p><label for="oglocatario2">Orgão expedidor: </label><input type="text" name="og" id="oglocatario2" size="4" placeholder="Ex.: SDS"></p>
                     <p><label for="locallocatario2">Estado da expedição: </label><input type="text" name="local" id="locallocatario2" placeholder="Ex.: PE"></p>
                     <p><label for="cpflocatario2">CPF: </label><input type="text" name="cpf" id="cpflocatario2" class="cpflocatario2" maxlength="14" autocomplete="off"></p>
@@ -120,11 +120,11 @@
                 <p><label for="valorescrito">Valor (escrito): </label><input type="text" name="valor" id="valorescrito"></p>
             </fieldset>
             <input type="button" value="ENVIAR" onclick="doc()">
-            <input type="button" class="botao"  value="COPIAR" id="copiar" onclick="clicar()">
             <input type="reset" class="botao" value="LIMPAR">
         </form>
         
     </section>
+    <h1 id="teste"></h1>
     <section id="documento">
         <header>
             <h1 >CONTRATO DE LOCAÇÃO</h1>
@@ -298,7 +298,7 @@
             <p>E por estarem assim justos e contratados, assinam o presente contrato em 03 (três) vias de igual teor, sendo as assinaturas lançada nesta última e rubricada em folhas anterior, tudo com as duas testemunhas abaixo presentes a todo o ato.</p>
         </div>
         
-        <h4>Jaboatão dos Guararapes, <span id="dia"></span> de <span id="mes"></span> de 2022.</h4>
+        <h4>Jaboatão dos Guararapes, <span class="dia"></span> de <span class="mes"></span> de 2022.</h4>
         
         <p>
             <strong>

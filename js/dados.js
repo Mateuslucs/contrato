@@ -1,56 +1,71 @@
 
+/*DADOS LOCADOR*/
+
+let nome_locador = document.getElementById('locador')
+let rg_locador = document.getElementById('rglocador')
+let orgao_locador = document.getElementById('oglocador')
+let local_locador = document.getElementById('locallocador')
+let cpf_locador = document.getElementById('cpflocador')
+let nacionalidade_locador = document.getElementById('nacionalidadelocador')
+let profissao_locador = document.getElementById('profissaolocador')
+
+/*DADOS DO LOCATARIO 1*/
+
+let nome_locatario1 = document.getElementById('locatario1')
+let rg_locatario1 = document.getElementById('rglocatario1')
+let orgao_locatario1 = document.getElementById('oglocatario1')
+let local_locatario1 = document.getElementById('locallocatario1')
+let cpf_locatario1 = document.getElementById('cpflocatario1')
+let nacionalidade_locatario1 = document.getElementById('nacionalidadelocatario1')
+let profissao_locatario1 = document.getElementById('profissaolocatario1')
+let rua_locatario1 = document.getElementById('rualocatario1')
+let numero_locatario1 = document.getElementById('numerolocatario1')
+let complemento_locatario1 = document.getElementById('residenciallocatario1')
+let cidade_locatario1 = document.getElementById('cidadelocatario1')
+let cep_locatario1 = document.getElementById('ceplocatario1')
+let ddd_locatario1 = document.getElementById('dddlocatario1')
+let contato_locatario1 = document.getElementById('contatolocatario1')
+let imail_locatario1 = document.getElementById('imaillocatario1')
+
+/*DADOS DO LOCATARIO 2*/
+
+let nome_locatario2 = document.getElementById('locatario2')
+let rg_locatario2 = document.getElementById('rglocatario2')
+let orgao_locatario2 = document.getElementById('oglocatario2')
+let local_locatario2 = document.getElementById('locallocatario2')
+let cpf_locatario2 = document.getElementById('cpflocatario2')
+let nacionalidade_locatario2 = document.getElementById('nacionalidadelocatario2')
+let profissao_locatario2 = document.getElementById('profissaolocatario2')
+let rua_locatario2 = document.getElementById('rualocatario2')
+let numero_locatario2 = document.getElementById('numerolocatario2')
+let complemento_locatario2 = document.getElementById('residenciallocatario2')
+let cidade_locatario2 = document.getElementById('cidadelocatario2')
+let cep_locatario2 = document.getElementById('ceplocatario2')
+let ddd_locatario2 = document.getElementById('dddlocatario2')
+let contato_locatario2 = document.getElementById('contatolocatario2')
+let imail_locatario2 = document.getElementById('imaillocatario2')
+
+
 /*DATA*/
 let data = new Date()
 let mes_atual = data.getMonth()
-
-
-switch(mes_atual){
-    case(0):
-        mes_atual = 'janeiro'
-        break
-    case(1):
-        mes_atual = 'fevereiro'
-        break
-    case(2):
-        mes_atual = 'março'
-        break
-    case(3):
-        mes_atual = 'abril'
-        break
-    case(4):
-        mes_atual = 'maio'
-        break
-    case(5):
-        mes_atual = 'junho'
-        break
-    case(6):
-        mes_atual = 'julho'
-        break
-    case(7):
-        mes_atual = 'agosto'
-        break
-    case(8):
-        mes_atual = 'setembro'
-        break
-    case(9):
-        mes_atual = 'outubro'
-        break
-    case(10):
-        mes_atual = 'novembro'
-        break
-    case(11):
-        mes_atual = 'dezembro'
-        break
-    
+let meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+for(var i = 0; i < meses.length; i++){
+    switch(mes_atual){
+        case(i):
+        mes_atual = `${meses[i]}`
+    }
 }
-let dia_atualtx =  document.querySelectorAll('#dia')
-let mes_atualtx = document.querySelectorAll('#mes')
+
+let dia_atualtx =  document.querySelectorAll('.dia')
+let mes_atualtx = document.querySelectorAll('.mes')
 dia_atualtx.forEach(ele => {
     ele.textContent = `${data.getDate()}`
 })
 mes_atualtx.forEach(ele => {
     ele.textContent = `${mes_atual}`
 })
+
 /*Formatação só numero*/
 function fnum(e){
     const char = String.fromCharCode(e.keyCode)
@@ -61,80 +76,76 @@ function fnum(e){
 }
 
 /*Formatação do RG*/
-let rg = document.getElementById('rglocador')
-rg.addEventListener('keypress', function(e) {
-    let rglen = rg.value.length
+
+rg_locador.addEventListener('keypress', function(e) {
+    let rglen = rg_locador.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(rglen == 2  || rglen == 6){
-        rg.value += '.'
+        rg_locador.value += '.'
     }    
 })
-let rg1 = document.getElementById('rglocatario1')
-rg1.addEventListener('keypress', function(e){
-    let rg1len = rg1.value.length
+rg_locatario1.addEventListener('keypress', function(e){
+    let rg1len = rg_locatario1.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(rg1len == 2 || rg1len == 6){
-        rg1.value += '.'
+        rg_locatario1.value += '.'
     }
 })
-let rg2 = document.getElementById('rglocatario2')
-rg2.addEventListener('keypress', function(e){
-    let rg2len = rg2.value.length
+rg_locatario2.addEventListener('keypress', function(e){
+    let rg2len = rg_locatario2.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(rg2len == 2 || rg2len == 6){
-        rg2.value += '.'
+        rg_locatario2.value += '.'
     }
 })
-/*Formação do CPF*/ 
-let cpf = document.getElementById('cpflocador')
-cpf.addEventListener('keypress', function(e){
-    let cpflen = cpf.value.length
+
+/*Formação do CPF*/
+
+cpf_locador.addEventListener('keypress', function(e){
+    let cpflen = cpf_locador.value.length
     if(!fnum(e)){
         e.preventDefault()
     }
     else if(cpflen == 3 || cpflen == 7){
-        cpf.value += '.'
+        cpf_locador.value += '.'
     }else if(cpflen == 11){
-        cpf.value += '-'
+        cpf_locador.value += '-'
     }
 })
-let cpf1 = document.getElementById('cpflocatario1')
-cpf1.addEventListener('keypress', function(e){
-    let cpflen = cpf1.value.length
+cpf_locatario1.addEventListener('keypress', function(e){
+    let cpflen = cpf_locatario1.value.length
     if(!fnum(e)){
         e.preventDefault()
     }
     else if(cpflen == 3 || cpflen == 7){
-        cpf1.value += '.'
+        cpf_locatario1.value += '.'
     }else if(cpflen == 11){
-        cpf1.value += '-'
+        cpf_locatario1.value += '-'
     }
 })
-let cpf2 = document.getElementById('cpflocatario2')
-cpf2.addEventListener('keypress', function(e){
-    let cpflen = cpf2.value.length
+cpf_locatario2.addEventListener('keypress', function(e){
+    let cpflen = cpf_locatario2.value.length
     if(!fnum(e)){
         e.preventDefault()
     }
     else if(cpflen == 3 || cpflen == 7){
-        cpf2.value += '.'
+        cpf_locatario2.value += '.'
     }else if(cpflen == 11){
-        cpf2.value += '-'
+        cpf_locatario2.value += '-'
     }
 })
 /*Formação do CEP*/
-let cep1 = document.querySelector('input.cep1')
-cep1.addEventListener('keypress', function(e){
-    let ceplen = cep1.value.length
+cep_locatario1.addEventListener('keypress', function(e){
+    let ceplen = cep_locatario1.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(ceplen == 2){
-        cep1.value += '.'
+        cep_locatario1.value += '.'
     }else if(ceplen == 6){
-        cep1.value += '-'
+        cep_locatario1.value += '-'
     }
 })
 let cep2 = document.querySelector('input.cep2')
@@ -195,52 +206,6 @@ contato2.addEventListener('keypress', function(e){
 
 function doc (){
 
-    /*DADOS LOCADOR*/
-
-    let nome_locador = document.getElementById('locador')
-    let rg_locador = document.getElementById('rglocador')
-    let orgao_locador = document.getElementById('oglocador')
-    let local_locador = document.getElementById('locallocador')
-    let cpf_locador = document.getElementById('cpflocador')
-    let nacionalidade_locador = document.getElementById('nacionalidadelocador')
-    let profissao_locador = document.getElementById('profissaolocador')
-
-    /*DADOS DO LOCATARIO 1*/
-
-    let nome_locatario1 = document.getElementById('locatario1')
-    let rg_locatario1 = document.getElementById('rglocatario1')
-    let orgao_locatario1 = document.getElementById('oglocatario1')
-    let local_locatario1 = document.getElementById('locallocatario1')
-    let cpf_locatario1 = document.getElementById('cpflocatario1')
-    let nacionalidade_locatario1 = document.getElementById('nacionalidadelocatario1')
-    let profissao_locatario1 = document.getElementById('profissaolocatario1')
-    let rua_locatario1 = document.getElementById('rualocatario1')
-    let numero_locatario1 = document.getElementById('numerolocatario1')
-    let complemento_locatario1 = document.getElementById('residenciallocatario1')
-    let cidade_locatario1 = document.getElementById('cidadelocatario1')
-    let cep_locatario1 = document.getElementById('ceplocatario1')
-    let ddd_locatario1 = document.getElementById('dddlocatario1')
-    let contato_locatario1 = document.getElementById('contatolocatario1')
-    let imail_locatario1 = document.getElementById('imaillocatario1')
-
-    /*DADOS DO LOCATARIO 2*/
-
-    let nome_locatario2 = document.getElementById('locatario2')
-    let rg_locatario2 = document.getElementById('rglocatario2')
-    let orgao_locatario2 = document.getElementById('oglocatario2')
-    let local_locatario2 = document.getElementById('locallocatario2')
-    let cpf_locatario2 = document.getElementById('cpflocatario2')
-    let nacionalidade_locatario2 = document.getElementById('nacionalidadelocatario2')
-    let profissao_locatario2 = document.getElementById('profissaolocatario2')
-    let rua_locatario2 = document.getElementById('rualocatario2')
-    let numero_locatario2 = document.getElementById('numerolocatario2')
-    let complemento_locatario2 = document.getElementById('residenciallocatario2')
-    let cidade_locatario2 = document.getElementById('cidadelocatario2')
-    let cep_locatario2 = document.getElementById('ceplocatario2')
-    let ddd_locatario2 = document.getElementById('dddlocatario2')
-    let contato_locatario2 = document.getElementById('contatolocatario2')
-    let imail_locatario2 = document.getElementById('imaillocatario2')
-
     /*Verificando Estado civil LOCADOR*/
     let casadolocador = document.getElementById('casadolocador')
     let estadocivil_locador = ''
@@ -260,7 +225,7 @@ function doc (){
     }
 
     /*Verificando Estado civil LOCATARIO2*/
-    let casadolocatario2 = document.getElementById('casadolocatario1')
+    let casadolocatario2 = document.getElementById('casadolocatario2')
     let estadocivil_locatario2 = ''
     if(casadolocatario2.checked){
         estadocivil_locatario2 = 'Casado(a)'
@@ -297,34 +262,24 @@ function doc (){
 
     /*Preenchendo dados LOCADOR*/
 
-    let locadortx = document.querySelectorAll('.locadortx')
-    locadortx.forEach(ele => {
-        ele.textContent = `${nome_locador.value}`.toUpperCase()
-    })
-    let rgtx = document.querySelectorAll('.rglocador')
-    rgtx.forEach(ele => {
-        ele.textContent = `${rg_locador.value}`
-    })
+    let nometx_locador = document.querySelectorAll('.locadortx')
+    let rgtx_locador = document.querySelectorAll('.rglocador')
     let ogtx_locador = document.querySelectorAll('.oglocador')
-    ogtx_locador.forEach(ele => {
-        ele.textContent = `${orgao_locador.value}`.toUpperCase()
-    })
     let localtx_locador = document.querySelectorAll('.locallocador')
-    localtx_locador.forEach(ele => {
-        ele.textContent = `${local_locador.value}`.toUpperCase()
-    })
     let cpftx_locador = document.querySelectorAll('.cpflocador')
-    cpftx_locador.forEach(ele => {
-        ele.textContent = `${cpf_locador.value}`
-    })
     let nacionalidadetx_locador = document.querySelectorAll('.nacionalidadelocador')
-    nacionalidadetx_locador.forEach(ele => {
-        ele.textContent = `${nacionalidade_locador.value}`
-    })
     let profissaotx_locador = document.querySelectorAll('.profissaolocador')
-    profissaotx_locador.forEach(ele => {
-        ele.textContent = `${profissao_locador.value}`
-    })
+
+    let lista_locatario = [nome_locador.value.toUpperCase(), rg_locador.value, orgao_locador.value.toUpperCase(), local_locador.value.toUpperCase(), cpf_locador.value, nacionalidade_locador.value, profissao_locador.value]
+
+    let lista_locatariotx = [nometx_locador, rgtx_locador, ogtx_locador, localtx_locador, cpftx_locador, nacionalidadetx_locador, profissaotx_locador]
+
+    for(var i = 0; i < lista_locatario.length; i++){
+        lista_locatariotx[i].forEach(ele => {
+            ele.textContent = `${lista_locatario[i]}`
+        })
+    }
+    
     let estadociviltx_locador = document.querySelectorAll('.estadocivillocador')
     if(estadocivil_locador == 'Solteiro(a)'){
         estadociviltx_locador.forEach(ele => {
@@ -651,7 +606,7 @@ function doc (){
 
     let mes_atualnumeroin = document.querySelectorAll('.mesdoprazonumin')
     let mes_atualnumerofim = document.querySelectorAll('.mesdoprazonumfim')
-    let meses = ['janeiro', 'fervereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+    
     for(var i = 0; i < meses.length; i++){
         if(i > 9){
             if(mes_prazo_inicio.value == meses[i]){
