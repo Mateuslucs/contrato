@@ -31,3 +31,14 @@ h1 {
     text-align: center;
     margin: 0px;
 }
+h4 {
+    text-align: right;
+}
+#assinatura {
+    padding: 5px;
+    margin-left: 126px;
+    text-align: center;
+    display: block;
+    background-color: bisque;
+    width: 355px;
+}

@@ -45,6 +45,17 @@ let ddd_locatario2 = document.getElementById('dddlocatario2')
 let contato_locatario2 = document.getElementById('contatolocatario2')
 let imail_locatario2 = document.getElementById('imaillocatario2')
 
+/*Dados do IMOVEL*/
+
+let residencial_imovel = document.getElementById('residencia') 
+let bloco_imovel = document.getElementById('bloco')
+let apartamento_imovel = document.getElementById('apt')
+let rua_imovel = document.getElementById('rua')
+let numero_imovel = document.getElementById('numero')
+let bairro_imovel = document.getElementById('bairro')
+let cidade_imovel = document.getElementById('cidade')
+let estado_imovel = document.getElementById('estado')
+let cep_imovel = document.getElementById('cep')
 
 /*DATA*/
 let data = new Date()
@@ -76,6 +87,7 @@ function fnum(e){
 }
 
 /*Formatação do RG*/
+
 
 rg_locador.addEventListener('keypress', function(e) {
     let rglen = rg_locador.value.length
@@ -148,57 +160,53 @@ cep_locatario1.addEventListener('keypress', function(e){
         cep_locatario1.value += '-'
     }
 })
-let cep2 = document.querySelector('input.cep2')
-cep2.addEventListener('keypress', function(e){
-    let cep2len = cep2.value.length
+cep_locatario2.addEventListener('keypress', function(e){
+    let cep2len = cep_locatario2.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(cep2len == 2){
-        cep2.value += '.'
+        cep_locatario2.value += '.'
     }else if(cep2len == 6){
-        cep2.value += '-'
+        cep_locatario2.value += '-'
     }
 })
-let cepimovel = document.querySelector('input.cepimovel')
-cepimovel.addEventListener('keypress', function(e){
-    let cepilen = cepimovel.value.length
+cep_imovel.addEventListener('keypress', function(e){
+    let cepilen = cep_imovel.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(cepilen == 2){
-        cepimovel.value += '.'
+        cep_imovel.value += '.'
     }else if(cepilen == 6){
-        cepimovel.value += '-'
+        cep_imovel.value += '-'
     }
 })
+
 /*Formação CONTATO*/
-let ddd1 = document.querySelector('input.ddd1')
-ddd1.addEventListener('keypress', function(e){
+
+ddd_locatario1.addEventListener('keypress', function(e){
     if(!fnum(e)){
         e.preventDefault()
     }
 })
-let contato1 = document.querySelector('input.contato1')
-contato1.addEventListener('keypress', function(e){
-    let contatolen = contato1.value.length
+contato_locatario1.addEventListener('keypress', function(e){
+    let contatolen = contato_locatario1.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(contatolen == 5){
-        contato1.value += '-'
+        contato_locatario1.value += '-'
     }
 })
-let ddd2 = document.querySelector('input.ddd2')
-ddd2.addEventListener('keypress', function(e){
+ddd_locatario2.addEventListener('keypress', function(e){
     if(!fnum(e)){
         e.preventDefault()
     }
 })
-let contato2 = document.querySelector('input.contato2')
-contato2.addEventListener('keypress', function(e){
-    let contatolen = contato2.value.length
+contato_locatario2.addEventListener('keypress', function(e){
+    let contatolen = contato_locatario2.value.length
     if(!fnum(e)){
         e.preventDefault()
     }else if(contatolen == 5){
-        contato2.value += '-'
+        contato_locatario2.value += '-'
     }
 })
 
@@ -262,6 +270,7 @@ function doc (){
 
     /*Preenchendo dados LOCADOR*/
 
+    /*local onde vai preenchido*/
     let nometx_locador = document.querySelectorAll('.locadortx')
     let rgtx_locador = document.querySelectorAll('.rglocador')
     let ogtx_locador = document.querySelectorAll('.oglocador')
@@ -270,13 +279,13 @@ function doc (){
     let nacionalidadetx_locador = document.querySelectorAll('.nacionalidadelocador')
     let profissaotx_locador = document.querySelectorAll('.profissaolocador')
 
-    let lista_locatario = [nome_locador.value.toUpperCase(), rg_locador.value, orgao_locador.value.toUpperCase(), local_locador.value.toUpperCase(), cpf_locador.value, nacionalidade_locador.value, profissao_locador.value]
+    let lista_locador = [nome_locador.value.toUpperCase(), rg_locador.value, orgao_locador.value.toUpperCase(), local_locador.value.toUpperCase(), cpf_locador.value, nacionalidade_locador.value, profissao_locador.value]
 
-    let lista_locatariotx = [nometx_locador, rgtx_locador, ogtx_locador, localtx_locador, cpftx_locador, nacionalidadetx_locador, profissaotx_locador]
+    let lista_locadortx = [nometx_locador, rgtx_locador, ogtx_locador, localtx_locador, cpftx_locador, nacionalidadetx_locador, profissaotx_locador]
 
-    for(var i = 0; i < lista_locatario.length; i++){
-        lista_locatariotx[i].forEach(ele => {
-            ele.textContent = `${lista_locatario[i]}`
+    for(var i = 0; i < lista_locador.length; i++){
+        lista_locadortx[i].forEach(ele => {
+            ele.textContent = `${lista_locador[i]}`
         })
     }
     
@@ -308,72 +317,44 @@ function doc (){
     /*Preenchendo dados LOCATARIO1*/
 
     let nometx_locatario1 = document.querySelectorAll('.locatario1')
-    nometx_locatario1.forEach(ele => {
-        ele.textContent = `${nome_locatario1.value}`
-    })
     let rgtx_locatario1 = document.querySelectorAll('.rglocatario1')
-    rgtx_locatario1.forEach(ele => {
-        ele.textContent = `${rg_locatario1.value}`
-    })
     let ogtx_locatario1 = document.querySelectorAll('.orgaolocatario1')
-    ogtx_locatario1.forEach(ele => {
-        ele.textContent = `${orgao_locatario1.value}`.toUpperCase()
-    })
     let localtx_locatario1 = document.querySelectorAll('.locallocatario1')
-    localtx_locatario1.forEach(ele => {
-        ele.textContent = `${local_locatario1.value}`.toUpperCase()
-    })
     let cpftx_locatario1 = document.querySelectorAll('.cpflocatario1')
-    cpftx_locatario1.forEach(ele => {
-        ele.textContent = `${cpf_locatario1.value}`
-    })
     let nacionalidadetx_locatario1 = document.querySelectorAll('.nacionalidadelocatario1')
-    nacionalidadetx_locatario1.forEach(ele => {
-        ele.textContent = `${nacionalidade_locatario1.value}`
-    })
     let profissaotx_locatario1 = document.querySelectorAll('.profissaolocatario1')
-    profissaotx_locatario1.forEach(ele => {
-        ele.textContent = `${profissao_locatario1.value}`
-    })
     let ruatx_locatario1 = document.querySelectorAll('.rualocatario1')
-    ruatx_locatario1.forEach(ele => {
-        ele.textContent = `${rua_locatario1.value}`
-    })
     let numerotx_locatario1 = document.querySelectorAll('.numerolocatario1')
-    numerotx_locatario1.forEach(ele => {
-        ele.textContent = `${numero_locatario1.value}`
-    })
+    let cidadetx_locatario1 = document.querySelectorAll('.cidadelocatario1')
+    let ceptx_locatario1 = document.querySelectorAll('.ceplocatario1')
+    let dddtx_locatario1 = document.querySelectorAll('.dddlocatario1')
+    let contatotx_locatario1 = document.querySelectorAll('.contatolocatario1')
+    let complementotx_locatario1 = document.querySelectorAll('.residencialocatario1')
+    let imailtx_locatario1 = document.querySelectorAll('.imaillocatario1')
+    let estadociviltx_locatario1 = document.querySelectorAll('.estadocivillocatario1')
+
+    let lista_locatario1 = [nome_locatario1.value.toUpperCase(), rg_locatario1.value, orgao_locatario1.value.toUpperCase(), local_locatario1.value.toUpperCase(), cpf_locatario1.value, nacionalidade_locatario1.value ,profissao_locatario1.value, rua_locatario1.value, numero_locatario1.value, complemento_locatario1.value, cidade_locatario1.value, cep_locatario1.value, ddd_locatario1.value, contato_locatario1.value, imail_locatario1.value]
+
+    let lista_locatario1tx = [nometx_locatario1, rgtx_locatario1, ogtx_locatario1, localtx_locatario1, cpftx_locatario1, nacionalidadetx_locatario1, profissaotx_locatario1, ruatx_locatario1, numerotx_locatario1, complementotx_locatario1, cidadetx_locatario1, ceptx_locatario1, dddtx_locatario1, contatotx_locatario1, imailtx_locatario1]
+
+    for(var i = 0; i < lista_locatario1.length; i++){
+        lista_locatario1tx[i].forEach(ele => {
+            ele.textContent = `${lista_locatario1[i]}`
+        })
+    }
+    
     if(complemento_locatario1.value.length > "0"){
-        let complementotx_locatario1 = document.querySelectorAll('.residencialocatario1')
         complementotx_locatario1.forEach(ele => {
             ele.textContent = `, ${complemento_locatario1.value}`
         })
     }
-    
-    let cidadetx_locatario1 = document.querySelectorAll('.cidadelocatario1')
-    cidadetx_locatario1.forEach(ele => {
-        ele.textContent = `${cidade_locatario1.value}`
-    })
-    let ceptx_locatario1 = document.querySelectorAll('.ceplocatario1')
-    ceptx_locatario1.forEach(ele => {
-        ele.textContent = `${cep_locatario1.value}`
-    })
-    let dddtx_locatario1 = document.querySelectorAll('.dddlocatario1')
-    dddtx_locatario1.forEach(ele => {
-        ele.textContent = `${ddd_locatario1.value}`
-    })
-    let contatotx_locatario1 = document.querySelectorAll('.contatolocatario1')
-    contatotx_locatario1.forEach(ele => {
-        ele.textContent = `${contato_locatario1.value}`
-    })
+
     if(imail_locatario1.value.length > "0"){
-        let imailtx_locatario1 = document.querySelectorAll('.imaillocatario1')
         imailtx_locatario1.forEach(ele => {
             ele.textContent = ` / ${imail_locatario1.value}`
         })
     }
     
-    let estadociviltx_locatario1 = document.querySelectorAll('.estadocivillocatario1')
     if(estadocivil_locatario1 == 'Solteiro(a)'){
         estadociviltx_locatario1.forEach(ele => {
             ele.textContent = `Solteiro(a)`
@@ -383,6 +364,7 @@ function doc (){
             ele.textContent = 'Casado(a)'
         })
     }
+
     let sexotx_locatario1 = document.querySelectorAll('.sexolocatario1')
     let sexoftx_locatario1 = document.querySelectorAll('.sexoflocatario1')
     if(sexo_locatario1 == 'feminino'){
@@ -401,72 +383,43 @@ function doc (){
     /*Preenchendo dados LOCATARIO2*/
 
     let nometx_locatario2 = document.querySelectorAll('.locatario2')
-    nometx_locatario2.forEach(ele => {
-        ele.textContent = `${nome_locatario2.value}`
-    })
     let rgtx_locatario2 = document.querySelectorAll('.rglocatario2')
-    rgtx_locatario2.forEach(ele => {
-        ele.textContent = `${rg_locatario2.value}`
-    })
     let ogtx_locatario2 = document.querySelectorAll('.orgaolocatario2')
-    ogtx_locatario2.forEach(ele => {
-        ele.textContent = `${orgao_locatario2.value}`.toUpperCase()
-    })
     let localtx_locatario2 = document.querySelectorAll('.locallocatario2')
-    localtx_locatario2.forEach(ele => {
-        ele.textContent = `${local_locatario2.value}`.toUpperCase()
-    })
     let cpftx_locatario2 = document.querySelectorAll('.cpflocatario2')
-    cpftx_locatario2.forEach(ele => {
-        ele.textContent = `${cpf_locatario2.value}`
-    })
     let nacionalidadetx_locatario2 = document.querySelectorAll('.nacionalidadelocatario2')
-    nacionalidadetx_locatario2.forEach(ele => {
-        ele.textContent = `${nacionalidade_locatario2.value}`
-    })
     let profissaotx_locatario2 = document.querySelectorAll('.profissaolocatario2')
-    profissaotx_locatario2.forEach(ele => {
-        ele.textContent = `${profissao_locatario2.value}`
-    })
     let ruatx_locatario2 = document.querySelectorAll('.rualocatario2')
-    ruatx_locatario2.forEach(ele => {
-        ele.textContent = `${rua_locatario2.value}`
-    })
     let numerotx_locatario2 = document.querySelectorAll('.numerolocatario2')
-    numerotx_locatario2.forEach(ele => {
-        ele.textContent = `${numero_locatario2.value}`
-    })
+    let cidadetx_locatario2 = document.querySelectorAll('.cidadelocatario2')
+    let ceptx_locatario2 = document.querySelectorAll('.ceplocatario2')
+    let dddtx_locatario2 = document.querySelectorAll('.dddlocatario2')
+    let contatotx_locatario2 = document.querySelectorAll('.contatolocatario2')
+    let complementotx_locatario2 = document.querySelectorAll('.residencialocatario2')
+    let imailtx_locatario2 = document.querySelectorAll('.imaillocatario2')
+    let estadociviltx_locatario2 = document.querySelectorAll('.estadocivillocatario2')
+
+    let lista_locatario2 = [nome_locatario2.value.toUpperCase(), rg_locatario2.value, orgao_locatario2.value.toUpperCase(), local_locatario2.value.toUpperCase(), cpf_locatario2.value, nacionalidade_locatario2.value ,profissao_locatario2.value, rua_locatario2.value, numero_locatario2.value, complemento_locatario2.value, cidade_locatario2.value, cep_locatario2.value, ddd_locatario2.value, contato_locatario2.value, imail_locatario2.value]
+
+    let lista_locatario2tx = [nometx_locatario2, rgtx_locatario2, ogtx_locatario2, localtx_locatario2, cpftx_locatario2, nacionalidadetx_locatario2, profissaotx_locatario2, ruatx_locatario2, numerotx_locatario2, complementotx_locatario2, cidadetx_locatario2, ceptx_locatario2, dddtx_locatario2, contatotx_locatario2, imailtx_locatario2]
+
+    for(var i = 0; i < lista_locatario2.length; i++){
+        lista_locatario2tx[i].forEach(ele => {
+            ele.textContent = `${lista_locatario2[i]}`
+        })
+    }
+    
     if(complemento_locatario2.value.length > "0"){
-        let complementotx_locatario2 = document.querySelectorAll('.residencialocatario2')
         complementotx_locatario2.forEach(ele => {
             ele.textContent = `, ${complemento_locatario2.value}`
         })
     }
-    
-    let cidadetx_locatario2 = document.querySelectorAll('.cidadelocatario2')
-    cidadetx_locatario2.forEach(ele => {
-        ele.textContent = `${cidade_locatario2.value}`
-    })
-    let ceptx_locatario2 = document.querySelectorAll('.ceplocatario2')
-    ceptx_locatario2.forEach(ele => {
-        ele.textContent = `${cep_locatario2.value}`
-    })
-    let dddtx_locatario2 = document.querySelectorAll('.dddlocatario2')
-    dddtx_locatario2.forEach(ele => {
-        ele.textContent = `${ddd_locatario2.value}`
-    })
-    let contatotx_locatario2 = document.querySelectorAll('.contatolocatario2')
-    contatotx_locatario2.forEach(ele => {
-        ele.textContent = `${contato_locatario2.value}`
-    })
     if(imail_locatario2.value.length > "0"){
-        let imailtx_locatario2 = document.querySelectorAll('.imaillocatario2')
         imailtx_locatario2.forEach(ele => {
             ele.textContent = ` / ${imail_locatario2.value}`
         })
     }
-    
-    let estadociviltx_locatario2 = document.querySelectorAll('.estadocivillocatario2')
+
     if(estadocivil_locatario2 == 'Solteiro(a)'){
         estadociviltx_locatario2.forEach(ele => {
             ele.textContent = `Solteiro(a)`
@@ -505,17 +458,7 @@ function doc (){
         ele.textContent = `${caucao_escrito.value}`
     })
 
-    /*Dados do IMOVEL*/
-
-    let residencial_imovel = document.getElementById('residencia') 
-    let bloco_imovel = document.getElementById('bloco')
-    let apartamento_imovel = document.getElementById('apt')
-    let rua_imovel = document.getElementById('rua')
-    let numero_imovel = document.getElementById('numero')
-    let bairro_imovel = document.getElementById('bairro')
-    let cidade_imovel = document.getElementById('cidade')
-    let estado_imovel = document.getElementById('estado')
-    let cep_imovel = document.getElementById('cep')
+   
 
     /*preenchendo dados do IMOVEL*/
     let residencial_imoveltx = document.querySelectorAll('.residencia')
@@ -528,33 +471,15 @@ function doc (){
     let estado_imoveltx = document.querySelectorAll('.estado')
     let cep_imoveltx = document.querySelectorAll('.cep')
 
-    residencial_imoveltx.forEach(ele => {
-        ele.textContent = `${residencial_imovel.value}`
-    })
-    bloco_imoveltx.forEach(ele => {
-        ele.textContent = `${bloco_imovel.value}`
-    })
-    apartamento_imoveltx.forEach(ele => {
-        ele.textContent = `${apartamento_imovel.value}`
-    })
-    rua_imoveltx.forEach(ele => {
-        ele.textContent = `${rua_imovel.value}`
-    })
-    numero_imoveltx.forEach(ele => {
-        ele.textContent = `${numero_imovel.value}`
-    })
-    bairro_imoveltx.forEach(ele => {
-        ele.textContent = `${bairro_imovel.value}`
-    })
-    cidade_imoveltx.forEach(ele => {
-        ele.textContent = `${cidade_imovel.value}`
-    })
-    estado_imoveltx.forEach(ele => {
-        ele.textContent = `${estado_imovel.value}`
-    })
-    cep_imoveltx.forEach(ele => {
-        ele.textContent = `${cep_imovel.value}`
-    })
+    let lista_imovel = [residencial_imovel.value, bloco_imovel.value, apartamento_imovel.value, rua_imovel.value, numero_imovel.value, bairro_imovel.value, cidade_imovel.value, estado_imovel.value, cep_imovel.value]
+
+    let lista_imoveltx = [residencial_imoveltx, bloco_imoveltx, apartamento_imoveltx, rua_imoveltx, numero_imoveltx, bairro_imoveltx, cidade_imoveltx, estado_imoveltx, cep_imoveltx]
+
+    for(var i = 0; i < lista_imovel.length; i++){
+        lista_imoveltx[i].forEach(ele => {
+            ele.textContent = `${lista_imovel[i]}`
+        })
+    }
 
     /*Dados do PRAZO DE LOCAÇÃO*/
 
@@ -566,6 +491,7 @@ function doc (){
     let dia_prazo_fim = document.getElementById('diadoprazofim')
     let mes_prazo_fim = document.getElementById('mesdoprazofim')
     let ano_prazo_fim = document.getElementById('anodoprazofim')
+    let lista_prazo = [prazo_locaçao.value, prazo_locacaçoescrito.value, dia_prazo_inicio.value, mes_prazo_inicio.value, ano_prazo_inicio.value, dia_prazo_fim.value, mes_prazo_fim.value, ano_prazo_fim.value]
 
     /*Preenchendo PRAZO DE LOCAÇÃO*/
     let prazo_locaçaotx = document.querySelectorAll('.prazodelocaçao')
@@ -576,32 +502,14 @@ function doc (){
     let dia_prazo_fimtx = document.querySelectorAll('.diadoprazofim')
     let mes_prazo_fimtx = document.querySelectorAll('.mesdoprazofim')
     let ano_prazo_fimtx = document.querySelectorAll('.anodoprazofim')
+    let lista_prazotx = [prazo_locaçaotx, prazo_locacaçoescritotx, dia_prazo_iniciotx, mes_prazo_iniciotx, ano_prazo_iniciotx, dia_prazo_fimtx, mes_prazo_fimtx, ano_prazo_fimtx]
 
-    prazo_locaçaotx.forEach(ele => {
-        ele.textContent = `${prazo_locaçao.value}`
-    })
-    prazo_locacaçoescritotx.forEach(ele => {
-        ele.textContent = `${prazo_locacaçoescrito.value}`
-    })
-    dia_prazo_iniciotx.forEach(ele => {
-        ele.textContent = `${dia_prazo_inicio.value}`
-    })
-    mes_prazo_iniciotx.forEach(ele => {
-        ele.textContent = `${mes_prazo_inicio.value}`
-    })
-    ano_prazo_iniciotx.forEach(ele => {
-        ele.textContent = `${ano_prazo_inicio.value}`
-    })
-    dia_prazo_fimtx.forEach(ele => {
-        ele.textContent = `${dia_prazo_fim.value}`
-    })
-    mes_prazo_fimtx.forEach(ele => {
-        ele.textContent = `${mes_prazo_fim.value}`
-    })
-    ano_prazo_fimtx.forEach(ele => {
-        ele.textContent = `${ano_prazo_fim.value}`
-    })
-
+    for(var i = 0; i < lista_prazo.length; i++){
+        lista_prazotx[i].forEach(ele => {
+            ele.textContent = `${lista_prazo[i]}`
+        })
+    }
+    
     /*Formatação do prazo data só numeros*/
 
     let mes_atualnumeroin = document.querySelectorAll('.mesdoprazonumin')
@@ -646,9 +554,5 @@ function doc (){
     })
     valor_aluguelescritotx.forEach(ele => {
         ele.textContent = `${valor_aluguelescrito.value}`
-    })
-    
+    })  
 }
-  
-
-    
