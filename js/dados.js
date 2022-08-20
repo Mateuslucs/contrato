@@ -486,23 +486,25 @@ function doc (){
     let prazo_locaçao = document.getElementById('prazodelocaçao')
     let prazo_locacaçoescrito = document.getElementById('prazodelocaçaoescrito')
     let dia_prazo_inicio = document.getElementById('diadoprazoin')
+    let dia_prazo_inicioEscrito = document.getElementById('diaprazoin_escrito')
     let mes_prazo_inicio = document.getElementById('mesdoprazoin')
     let ano_prazo_inicio = document.getElementById('anodoprazoin')
     let dia_prazo_fim = document.getElementById('diadoprazofim')
-    let mes_prazo_fim = document.getElementById('mesdoprazofim')
+    let mes_prazo_fim = document.getElementById('mesdoprazofim') 
     let ano_prazo_fim = document.getElementById('anodoprazofim')
-    let lista_prazo = [prazo_locaçao.value, prazo_locacaçoescrito.value, dia_prazo_inicio.value, mes_prazo_inicio.value, ano_prazo_inicio.value, dia_prazo_fim.value, mes_prazo_fim.value, ano_prazo_fim.value]
+    let lista_prazo = [prazo_locaçao.value, prazo_locacaçoescrito.value, dia_prazo_inicio.value, dia_prazo_inicioEscrito.value, mes_prazo_inicio.value, ano_prazo_inicio.value, dia_prazo_fim.value, mes_prazo_fim.value, ano_prazo_fim.value]
 
     /*Preenchendo PRAZO DE LOCAÇÃO*/
     let prazo_locaçaotx = document.querySelectorAll('.prazodelocaçao')
     let prazo_locacaçoescritotx = document.querySelectorAll('.prazodelocaçaoescrito')
     let dia_prazo_iniciotx = document.querySelectorAll('.diadoprazoin')
+    let dia_prazo_inicioEscritotx = document.querySelectorAll('.diaprazoin_escrito')
     let mes_prazo_iniciotx = document.querySelectorAll('.mesdoprazoin')
     let ano_prazo_iniciotx = document.querySelectorAll('.anodoprazoin')
     let dia_prazo_fimtx = document.querySelectorAll('.diadoprazofim')
     let mes_prazo_fimtx = document.querySelectorAll('.mesdoprazofim')
     let ano_prazo_fimtx = document.querySelectorAll('.anodoprazofim')
-    let lista_prazotx = [prazo_locaçaotx, prazo_locacaçoescritotx, dia_prazo_iniciotx, mes_prazo_iniciotx, ano_prazo_iniciotx, dia_prazo_fimtx, mes_prazo_fimtx, ano_prazo_fimtx]
+    let lista_prazotx = [prazo_locaçaotx, prazo_locacaçoescritotx, dia_prazo_iniciotx, dia_prazo_inicioEscritotx, mes_prazo_iniciotx, ano_prazo_iniciotx, dia_prazo_fimtx, mes_prazo_fimtx, ano_prazo_fimtx]
 
     for(var i = 0; i < lista_prazo.length; i++){
         lista_prazotx[i].forEach(ele => {

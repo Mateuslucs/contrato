@@ -34,7 +34,7 @@ h1 {
 h4 {
     text-align: right;
 }
-#assinatura {
+#assinatura, .cris {
     padding: 5px;
     margin-left: 126px;
     text-align: center;
