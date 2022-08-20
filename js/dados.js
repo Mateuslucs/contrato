@@ -21,7 +21,9 @@ let profissao_locatario1 = document.getElementById('profissaolocatario1')
 let rua_locatario1 = document.getElementById('rualocatario1')
 let numero_locatario1 = document.getElementById('numerolocatario1')
 let complemento_locatario1 = document.getElementById('residenciallocatario1')
+let bairro_locatario1 = document.getElementById('bairrolocatario1')
 let cidade_locatario1 = document.getElementById('cidadelocatario1')
+let estado_locatario1 = document.getElementById('estadolocatario1')
 let cep_locatario1 = document.getElementById('ceplocatario1')
 let ddd_locatario1 = document.getElementById('dddlocatario1')
 let contato_locatario1 = document.getElementById('contatolocatario1')
@@ -39,7 +41,9 @@ let profissao_locatario2 = document.getElementById('profissaolocatario2')
 let rua_locatario2 = document.getElementById('rualocatario2')
 let numero_locatario2 = document.getElementById('numerolocatario2')
 let complemento_locatario2 = document.getElementById('residenciallocatario2')
+let bairro_locatario2 = document.getElementById('bairrolocatario2')
 let cidade_locatario2 = document.getElementById('cidadelocatario2')
+let estado_locatario2 = document.getElementById('estadolocatario2')
 let cep_locatario2 = document.getElementById('ceplocatario2')
 let ddd_locatario2 = document.getElementById('dddlocatario2')
 let contato_locatario2 = document.getElementById('contatolocatario2')
@@ -325,7 +329,9 @@ function doc (){
     let profissaotx_locatario1 = document.querySelectorAll('.profissaolocatario1')
     let ruatx_locatario1 = document.querySelectorAll('.rualocatario1')
     let numerotx_locatario1 = document.querySelectorAll('.numerolocatario1')
+    let bairrotx_locatario1 = document.querySelectorAll('.bairrolocatario1')
     let cidadetx_locatario1 = document.querySelectorAll('.cidadelocatario1')
+    let estadotx_locatario1 = document.querySelectorAll('.estadolocatario1')
     let ceptx_locatario1 = document.querySelectorAll('.ceplocatario1')
     let dddtx_locatario1 = document.querySelectorAll('.dddlocatario1')
     let contatotx_locatario1 = document.querySelectorAll('.contatolocatario1')
@@ -333,9 +339,9 @@ function doc (){
     let imailtx_locatario1 = document.querySelectorAll('.imaillocatario1')
     let estadociviltx_locatario1 = document.querySelectorAll('.estadocivillocatario1')
 
-    let lista_locatario1 = [nome_locatario1.value.toUpperCase(), rg_locatario1.value, orgao_locatario1.value.toUpperCase(), local_locatario1.value.toUpperCase(), cpf_locatario1.value, nacionalidade_locatario1.value ,profissao_locatario1.value, rua_locatario1.value, numero_locatario1.value, complemento_locatario1.value, cidade_locatario1.value, cep_locatario1.value, ddd_locatario1.value, contato_locatario1.value, imail_locatario1.value]
+    let lista_locatario1 = [nome_locatario1.value.toUpperCase(), rg_locatario1.value, orgao_locatario1.value.toUpperCase(), local_locatario1.value.toUpperCase(), cpf_locatario1.value, nacionalidade_locatario1.value ,profissao_locatario1.value, rua_locatario1.value, numero_locatario1.value, complemento_locatario1.value,bairro_locatario1.value, cidade_locatario1.value,estado_locatario1.value.toUpperCase(), cep_locatario1.value, ddd_locatario1.value, contato_locatario1.value, imail_locatario1.value]
 
-    let lista_locatario1tx = [nometx_locatario1, rgtx_locatario1, ogtx_locatario1, localtx_locatario1, cpftx_locatario1, nacionalidadetx_locatario1, profissaotx_locatario1, ruatx_locatario1, numerotx_locatario1, complementotx_locatario1, cidadetx_locatario1, ceptx_locatario1, dddtx_locatario1, contatotx_locatario1, imailtx_locatario1]
+    let lista_locatario1tx = [nometx_locatario1, rgtx_locatario1, ogtx_locatario1, localtx_locatario1, cpftx_locatario1, nacionalidadetx_locatario1, profissaotx_locatario1, ruatx_locatario1, numerotx_locatario1, complementotx_locatario1,bairrotx_locatario1, cidadetx_locatario1, estadotx_locatario1, ceptx_locatario1, dddtx_locatario1, contatotx_locatario1, imailtx_locatario1]
 
     for(var i = 0; i < lista_locatario1.length; i++){
         lista_locatario1tx[i].forEach(ele => {
@@ -391,7 +397,9 @@ function doc (){
     let profissaotx_locatario2 = document.querySelectorAll('.profissaolocatario2')
     let ruatx_locatario2 = document.querySelectorAll('.rualocatario2')
     let numerotx_locatario2 = document.querySelectorAll('.numerolocatario2')
+    let bairrotx_locatario2 = document.querySelectorAll('.bairrolocatario2')
     let cidadetx_locatario2 = document.querySelectorAll('.cidadelocatario2')
+    let estadotx_locatario2 = document.querySelectorAll('.estadolocatario2')
     let ceptx_locatario2 = document.querySelectorAll('.ceplocatario2')
     let dddtx_locatario2 = document.querySelectorAll('.dddlocatario2')
     let contatotx_locatario2 = document.querySelectorAll('.contatolocatario2')
@@ -399,9 +407,9 @@ function doc (){
     let imailtx_locatario2 = document.querySelectorAll('.imaillocatario2')
     let estadociviltx_locatario2 = document.querySelectorAll('.estadocivillocatario2')
 
-    let lista_locatario2 = [nome_locatario2.value.toUpperCase(), rg_locatario2.value, orgao_locatario2.value.toUpperCase(), local_locatario2.value.toUpperCase(), cpf_locatario2.value, nacionalidade_locatario2.value ,profissao_locatario2.value, rua_locatario2.value, numero_locatario2.value, complemento_locatario2.value, cidade_locatario2.value, cep_locatario2.value, ddd_locatario2.value, contato_locatario2.value, imail_locatario2.value]
+    let lista_locatario2 = [nome_locatario2.value.toUpperCase(), rg_locatario2.value, orgao_locatario2.value.toUpperCase(), local_locatario2.value.toUpperCase(), cpf_locatario2.value, nacionalidade_locatario2.value ,profissao_locatario2.value, rua_locatario2.value, numero_locatario2.value, complemento_locatario2.value, bairro_locatario2.value, cidade_locatario2.value, estado_locatario2.value.toUpperCase(), cep_locatario2.value, ddd_locatario2.value, contato_locatario2.value, imail_locatario2.value]
 
-    let lista_locatario2tx = [nometx_locatario2, rgtx_locatario2, ogtx_locatario2, localtx_locatario2, cpftx_locatario2, nacionalidadetx_locatario2, profissaotx_locatario2, ruatx_locatario2, numerotx_locatario2, complementotx_locatario2, cidadetx_locatario2, ceptx_locatario2, dddtx_locatario2, contatotx_locatario2, imailtx_locatario2]
+    let lista_locatario2tx = [nometx_locatario2, rgtx_locatario2, ogtx_locatario2, localtx_locatario2, cpftx_locatario2, nacionalidadetx_locatario2, profissaotx_locatario2, ruatx_locatario2, numerotx_locatario2, complementotx_locatario2, bairrotx_locatario2, cidadetx_locatario2, estadotx_locatario2, ceptx_locatario2, dddtx_locatario2, contatotx_locatario2, imailtx_locatario2]
 
     for(var i = 0; i < lista_locatario2.length; i++){
         lista_locatario2tx[i].forEach(ele => {
