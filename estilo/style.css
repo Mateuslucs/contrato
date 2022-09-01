@@ -58,6 +58,12 @@ fieldset {
     display: none;
 }
 /*codigo novo*/
+#dado_locador > p {
+    display: inline-block;
+}
+#dado_locador > p.radio {
+    display: block;
+}
 #dado_locatario1{
     display: inline-grid;
     margin-top: 0px;
@@ -70,7 +76,7 @@ aside {
 #endereço_locatario1 {
     width: 297px;
 }
-#endereço_locatario1 > p, #dado_locatario1 > p, #contato_locatario1 > p{
+#endereço_locatario1 > p, #dado_locatario1 > p, #contato_locatario1 > p, #dado_locador > p{
     margin: 5px 0px 5px;
 }
 #numerolocatario1 {
