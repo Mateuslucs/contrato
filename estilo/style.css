@@ -18,6 +18,9 @@ strong{
 .botao {
     margin-left: 10px;
 }
+button {
+    display: block;
+}
 #add {
     font-size: 1em;
 }
@@ -54,4 +57,22 @@ fieldset {
 .sp_locatario2 {
     display: none;
 }
-
+/*codigo novo*/
+#dado_locatario1{
+    display: inline-grid;
+    margin-top: 0px;
+    padding-top: 5px;
+}
+aside {
+    display: inline-grid;
+    
+}
+#endereço_locatario1 {
+    width: 297px;
+}
+#endereço_locatario1 > p, #dado_locatario1 > p, #contato_locatario1 > p{
+    margin: 5px 0px 5px;
+}
+#numerolocatario1 {
+    width: 40px;
+}

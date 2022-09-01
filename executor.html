@@ -27,9 +27,9 @@
                     <p><label for="profissaolocador">Profissão: </label><input type="text" name="profissao" id="profissaolocador"></p>
                 </fieldset>
             </fieldset>
-            <fieldset>
+            <fieldset id="_locatario1">
                 <legend>LOCATARIO (1)</legend>
-                <fieldset>
+                <fieldset id="dado_locatario1">
                     <legend>Dados</legend>
                     <p><label for="locatario1">Nome: </label><input type="text" name="nome" id="locatario1"></p>
                     <p><label for="rglocatario1">RG: </label><input type="text" name="rg" id="rglocatario1" class="rg" autocomplete="off"></p>
@@ -41,20 +41,22 @@
                     <p>Estado civil: <input type="radio" name="civillocatario1" id="solteirolocatario1" checked><label for="solteirolocatario1">Solteiro(a)</label> <input type="radio" name="civillocatario1" id="casadolocatario1"><label for="casadolocatario1">Casado(a)</label></p>
                     <p><label for="profissaolocatario1">Profissão: </label><input type="text" name="profissao" id="profissaolocatario1"></p>
                 </fieldset>
-                <fieldset>
-                    <legend>Endereço</legend>
-                    <p><label for="rualocatario1">Rua: </label><input type="text" name="rua" id="rualocatario1"> <label for="numerolocatario1">Nº: </label><input type="number" name="rua" id="numerolocatario1"></p>
-                    <p><label for="residenciallocatario1">Complemento: </label><input type="text" name="residencial" id="residenciallocatario1" placeholder="Ex.: Res. jangadeiro - Bloco 00 - APT 000"></p>
-                    <p><label for="bairrolocatario1">Bairro: </label><input type="text" name="bairro" id="bairrolocatario1"></p>
-                    <p><label for="cidadelocatario1">Cidade: </label><input type="text" name="cidade" id="cidadelocatario1" placeholder="Ex.: Jaboatão dos Guararapes"></p>
-                    <p><label for="estadolocatario1">Estado: </label><input type="text" name="estado" id="estadolocatario1"></p>
-                    <p><label for="ceplocatario1">CEP: </label><input type="text" name="cep" id="ceplocatario1" class="cep1"  maxlength="10"></p>
-                </fieldset>
-                <fieldset>
-                    <legend>Contato</legend>
-                    <p>Contato: <input type="text" name="ddd" id="dddlocatario1" class="ddd1" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato" class="contato1" id="contatolocatario1" maxlength="10" placeholder="00000-0000"></p>
-                    <p><label for="imaillocatario1">Imail: </label><input type="email" name="imail" id="imaillocatario1"></p>
-                </fieldset>
+                <aside>
+                    <fieldset id="endereço_locatario1">
+                        <legend>Endereço</legend>
+                        <p><label for="rualocatario1">Rua: </label><input type="text" name="rua" id="rualocatario1"> <label for="numerolocatario1">Nº: </label><input type="number" name="rua" id="numerolocatario1"></p>
+                        <p><label for="residenciallocatario1">Complemento: </label><input type="text" name="residencial" id="residenciallocatario1" placeholder="Ex.: Res. jangadeiro - Bloco 00 - APT 000"></p>
+                        <p><label for="bairrolocatario1">Bairro: </label><input type="text" name="bairro" id="bairrolocatario1"></p>
+                        <p><label for="cidadelocatario1">Cidade: </label><input type="text" name="cidade" id="cidadelocatario1" placeholder="Ex.: Jaboatão dos Guararapes"></p>
+                        <p><label for="estadolocatario1">Estado: </label><input type="text" name="estado" id="estadolocatario1"></p>
+                        <p><label for="ceplocatario1">CEP: </label><input type="text" name="cep" id="ceplocatario1" class="cep1"  maxlength="10"></p>
+                    </fieldset>
+                    <fieldset id="contato_locatario1">
+                        <legend>Contato</legend>
+                        <p>Contato: <input type="text" name="ddd" id="dddlocatario1" class="ddd1" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato" class="contato1" id="contatolocatario1" maxlength="10" placeholder="00000-0000"></p>
+                        <p><label for="imaillocatario1">Imail: </label><input type="email" name="imail" id="imaillocatario1"></p>
+                    </fieldset>
+                </aside>
                 <button id="add" type="button">
                     <img src="imagens/adicionar_preto.png" alt=""> Adicionar Locatario
                 </button>
