@@ -55,8 +55,11 @@
                     <p>Contato: <input type="text" name="ddd" id="dddlocatario1" class="ddd1" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato" class="contato1" id="contatolocatario1" maxlength="10" placeholder="00000-0000"></p>
                     <p><label for="imaillocatario1">Imail: </label><input type="email" name="imail" id="imaillocatario1"></p>
                 </fieldset>
+                <button id="add" type="button">
+                    <img src="imagens/adicionar_preto.png" alt=""> Adicionar Locatario
+                </button>
             </fieldset>
-            <fieldset>
+            <fieldset class="form_locatario2">
                 <legend>LOCATARIO (2)</legend>
                 <fieldset>
                     <legend>Dados</legend>
@@ -84,6 +87,9 @@
                     <p>Contato: <input type="text" name="ddd" id="dddlocatario2" class="ddd2" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato2" class="contato2" id="contatolocatario2" maxlength="10" placeholder="00000-0000"></p>
                     <p><label for="imaillocatario2">Imail: </label><input type="email" name="imail" id="imaillocatario2"></p>
                 </fieldset>
+                <button id="remove" type="button">
+                    <img src="imagens/remover_preto.png" alt=""> Remover Locatario
+                </button>
             </fieldset>
             <fieldset>
                 <legend>CAUÇÃO</legend>
@@ -141,7 +147,7 @@
         
         <p><strong>LOCATÁRI<span class="sexolocatario1"></span> (1): <span class="locatario1"></span></strong></p>
         
-        <p><strong>LOCATÁRI<span class="sexolocatario2"></span> (2): <span class="locatario2"></span></strong></p>
+        <p class="form_locatario2"><strong>LOCATÁRI<span class="sexolocatario2"></span> (2): <span class="locatario2"></span></strong></p>
         
         <p><strong>IMÓVEL: IMÓVEL <span class="residencia"></span> BLOCO - <span class="bloco"></span> - APARTAMENTO <span class="apt"></span>, SITUADO NA <span class="rua"></span>, Nº <span class="numero"></span>, NO BAIRRO <span class="bairro"></span> - <span class="cidade"></span>/<span class="estado"></span>. CEP: <span class="cep"></span></strong></p>
         
@@ -268,7 +274,7 @@
             <p></p><strong>ITEM 02:</strong><br>
             <strong>LOCATÁRI<span class="sexolocatario1"></span> (1): <span class="locatario1"></span></strong>, portador<span class="sexoflocatario1"></span> da Carteira de Identidade RG nº <span class="rglocatario1"></span> <span class="orgaolocatario1"></span>/<span class="locallocatario1"></span> e CPF nº <span class="cpflocatario1"></span>, <span class="nacionalidadelocatario1"></span>, <span class="estadocivillocatario1"></span>, <span class="profissaolocatario1"></span>, residente e domiciliad<span class="sexolocatario1"></span> na <span class="rualocatario1"></span>, nº <span class="numerolocatario1"></span><span class="residencialocatario1"></span> – <span class="bairrolocatario1"></span> - <span class="cidadelocatario1"></span>/<span class="estadolocatario1"></span> CEP: <span class="ceplocatario1"></span>. Contatos: (<span class="dddlocatario1"></span>)<span class="contatolocatario1"></span><span class="imaillocatario1"></span>.</p>
         
-            <p><strong>LOCATÁRI<span class="sexolocatario2"></span> (2): <span class="locatario2"></span></strong>, portador<span class="sexoflocatario2"></span> da Carteira de Identidade RG nº <span class="rglocatario2"></span> <span class="orgaolocatario2"></span>/<span class="locallocatario2"></span> e CPF nº <span class="cpflocatario2"></span>, <span id="nacionalidadelocatario2"></span>, <span class="estadocivillocatario2"></span>, <span class="profissaolocatario2"></span>, residente e domiciliad<span class="sexolocatario2"></span> na <span class="rualocatario2"></span>, nº <span class="numerolocatario2"></span> <span class="residencialocatario2"></span> – <span class="bairrolocatario2"></span> - <span class="cidadelocatario2"></span>/<span class="estadolocatario2"></span> CEP: <span class="ceplocatario2"></span>. Contatos: (<span class="dddlocatario2"></span>)<span class="contatolocatario2"></span> <span class="imaillocatario2"></span>.</p>
+            <p class="form_locatario2"><strong>LOCATÁRI<span class="sexolocatario2"></span> (2): <span class="locatario2"></span></strong>, portador<span class="sexoflocatario2"></span> da Carteira de Identidade RG nº <span class="rglocatario2"></span> <span class="orgaolocatario2"></span>/<span class="locallocatario2"></span> e CPF nº <span class="cpflocatario2"></span>, <span id="nacionalidadelocatario2"></span>, <span class="estadocivillocatario2"></span>, <span class="profissaolocatario2"></span>, residente e domiciliad<span class="sexolocatario2"></span> na <span class="rualocatario2"></span>, nº <span class="numerolocatario2"></span> <span class="residencialocatario2"></span> – <span class="bairrolocatario2"></span> - <span class="cidadelocatario2"></span>/<span class="estadolocatario2"></span> CEP: <span class="ceplocatario2"></span>. Contatos: (<span class="dddlocatario2"></span>)<span class="contatolocatario2"></span> <span class="imaillocatario2"></span>.</p>
         </div>
         
         <div class="item"><strong>ITEM 03: CAUÇÃO:</strong> O valor será de R$<span class="caucao"></span> (<span class="caucaoescrito"></span>) a ser depositado na conta da <strong>LOCADORA</strong>, qual seja <strong>banco Neon, agencia 0655; conta corrente 13133326-7, tendo como favorecido: CRISTIANO MACÁRIO ALVES, PIX CPF: 023.694.224-75, que no final da locação será devolvido para as LOCATARIAS após vistoria de saída e sem nenhum débitos.</strong></div>
@@ -282,7 +288,7 @@
         <div class="item">
             <strong>ITEM 06: DESTINAÇÃO DO IMÓVEL – para fins exclusivamente Residenciais das MORADORAS:</strong>
             <br>
-            <span class="locatario1"></span> E <span class="locatario2"></span>, e seus familiares, sendo vetada a sublocação total ou parcial, sem a anuência expressa e por escrito da LOCADORA.
+            <span class="locatario1"></span><span class="sp_locatario2"> E <span class="locatario2"></span></span>, e seus familiares, sendo vetada a sublocação total ou parcial, sem a anuência expressa e por escrito da LOCADORA.
         </div>
         
         <div class="item">
@@ -314,7 +320,7 @@
             <strong>LOCATÁRIO 01: _________________________________________<br>
                 <span id="assinatura" class="locatario1"></span></strong>
         </p>
-        <p>
+        <p class="form_locatario2">
             <strong>LOCATÁRIO 02:  _________________________________________<br>
                 <span id="assinatura" class="locatario2"></span></strong>
         </p>

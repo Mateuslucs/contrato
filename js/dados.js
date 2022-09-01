@@ -49,6 +49,23 @@ let ddd_locatario2 = document.getElementById('dddlocatario2')
 let contato_locatario2 = document.getElementById('contatolocatario2')
 let imail_locatario2 = document.getElementById('imaillocatario2')
 
+let botao_add = document.getElementById('add')
+let botao_remover = document.getElementById('remove')
+let formulario = document.querySelectorAll('.form_locatario2')
+let formulario_span = document.querySelector('.sp_locatario2')
+botao_add.addEventListener('click', function() {
+    formulario.forEach( ele => {
+        ele.style.display = 'block'
+    })
+    formulario_span.style.display = 'inline-block'
+})
+botao_remover.addEventListener('click', function() {
+    formulario.forEach(ele => {
+        ele.style.display = 'none'
+    })
+    formulario_span.style.display = 'none'
+})
+
 /*Dados do IMOVEL*/
 
 let residencial_imovel = document.getElementById('residencia') 

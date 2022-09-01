@@ -18,6 +18,9 @@ strong{
 .botao {
     margin-left: 10px;
 }
+#add {
+    font-size: 1em;
+}
 #documento {
     display: block;
     text-align: justify;
@@ -42,3 +45,13 @@ h4 {
     background-color: bisque;
     width: 355px;
 }
+fieldset {
+    margin: 10px;
+}
+.form_locatario2{
+    display: none;
+}
+.sp_locatario2 {
+    display: none;
+}
+
