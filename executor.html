@@ -18,13 +18,16 @@
                 <fieldset id="dado_locador">
                     <legend>Dados</legend>
                     <p><label for="locador">Nome: <br></label><input type="text" name="nome" id="locador"></p>
-                    <p><label for="rglocador">RG: <br></label><input type="text" name="rg" id="rglocador" class="rg" autocomplete="off"></p><p><label for="oglocador">Orgão expedidor: <br></label><input type="text" name="og" id="oglocador"  placeholder="Ex.: SDS"></p>
+                    <p><label for="rglocador">RG: <br></label><input type="text" name="rg" id="rglocador" class="rg" autocomplete="off"></p>
+                    <p><label for="oglocador">Orgão expedidor: <br></label><input type="text" name="og" id="oglocador"  placeholder="Ex.: SDS"></p>
                     <p><label for="locallocador">Estado da expedição: <br></label><input type="text" name="local" id="locallocador" placeholder="Ex.: PE"></p>
                     <p><label for="cpflocador">CPF: <br></label><input type="text" name="cpf" id="cpflocador" class="cpflocador" maxlength="14" autocomplete="off"></p>
-                    <p class="radio">Sexo: <input type="radio" name="sexolocador" id="masculinolocador" checked><label for="masculinolocador" >Masculino</label> <input type="radio" name="sexolocador" id="femininolocador"><label for="femininolocador">Feminino</label></p>
                     <p><label for="nacionalidadelocador">Nacionalidade: <br></label><input type="text" name="nacionalidade" id="nacionalidadelocador" placeholder="Ex.: brasileiro"></p>
-                    <p class="radio">Estado civil: <input type="radio" name="civillocador" id="solteirolocador" checked><label for="solteirolocador">Solteiro(a)</label> <input type="radio" name="civillocador" id="casadolocador"><label for="casadolocador">Casado(a)</label></p>
                     <p><label for="profissaolocador">Profissão: <br></label><input type="text" name="profissao" id="profissaolocador"></p>
+                    <div id="radio">
+                        <p class="radio">Sexo: <input type="radio" name="sexolocador" id="masculinolocador" checked><label for="masculinolocador" >Masculino</label> <input type="radio" name="sexolocador" id="femininolocador"><label for="femininolocador">Feminino</label></p>
+                        <p class="radio">Estado civil: <input type="radio" name="civillocador" id="solteirolocador" checked><label for="solteirolocador">Solteiro(a)</label> <input type="radio" name="civillocador" id="casadolocador"><label for="casadolocador">Casado(a)</label></p>
+                    </div>
                 </fieldset>
             </fieldset>
             <fieldset id="_locatario1">
@@ -57,13 +60,13 @@
                         <p><label for="imaillocatario1">Imail: </label><input type="email" name="imail" id="imaillocatario1"></p>
                     </fieldset>
                 </aside>
-                <button id="add" type="button">
+                <button id="add" type="button" class="button">
                     <img src="imagens/adicionar_preto.png" alt=""> Adicionar Locatario
                 </button>
             </fieldset>
             <fieldset class="form_locatario2">
                 <legend>LOCATARIO (2)</legend>
-                <fieldset>
+                <fieldset id="dado_locatario2">
                     <legend>Dados</legend>
                     <p><label for="locatario2">Nome: </label><input type="text" name="nome" id="locatario2"></p>
                     <p><label for="rglocatario2">RG: </label><input type="text" name="rg" id="rglocatario2" class="rg" autocomplete="off"></p>
@@ -75,21 +78,23 @@
                     <p>Estado civil: <input type="radio" name="civillocatario2" id="solteirolocatario2" checked><label for="solteirolocatario2">Solteiro(a)</label> <input type="radio" name="civillocatario2" id="casadolocatario2"><label for="casadolocatario2">Casado(a)</label></p>
                     <p><label for="profissaolocatario2">Profissão: </label><input type="text" name="profissao" id="profissaolocatario2"></p>
                 </fieldset>
-                <fieldset>
-                    <legend>Endereço</legend>
-                    <p><label for="rualocatario2">Rua: </label><input type="text" name="rua" id="rualocatario2"> <label for="numerolocatario2">Nº: </label><input type="number" name="rua" id="numerolocatario2"></p>
-                    <p><label for="residenciallocatario2">Complemento: </label><input type="text" name="residencial" id="residenciallocatario2" placeholder="Ex.: Res. jangadeiro - Bloco 00 - APT 000"></p>
-                    <p><label for="bairrolocatario2">Bairro: </label><input type="text" name="bairro" id="bairrolocatario2"></p>
-                    <p><label for="cidadelocatario2">Cidade: </label><input type="text" name="cidade" id="cidadelocatario2" placeholder="Ex.: Jaboatão dos Guararapes"></p>
-                    <p><label for="estadolocatario2">Estado: </label><input type="text" name="estado" id="estadolocatario2"></p>
-                    <p><label for="ceplocatario2">CEP: </label><input type="text" name="cep" id="ceplocatario2" class="cep2" maxlength="10"></p>
-                </fieldset>
-                <fieldset>
-                    <legend>Contato</legend>
-                    <p>Contato: <input type="text" name="ddd" id="dddlocatario2" class="ddd2" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato2" class="contato2" id="contatolocatario2" maxlength="10" placeholder="00000-0000"></p>
-                    <p><label for="imaillocatario2">Imail: </label><input type="email" name="imail" id="imaillocatario2"></p>
-                </fieldset>
-                <button id="remove" type="button">
+                <aside>
+                    <fieldset id="endereço_locatario2">
+                        <legend>Endereço</legend>
+                        <p><label for="rualocatario2">Rua: </label><input type="text" name="rua" id="rualocatario2"> <label for="numerolocatario2">Nº: </label><input type="number" name="rua" id="numerolocatario2"></p>
+                        <p><label for="residenciallocatario2">Complemento: </label><input type="text" name="residencial" id="residenciallocatario2" placeholder="Ex.: Res. jangadeiro - Bloco 00 - APT 000"></p>
+                        <p><label for="bairrolocatario2">Bairro: </label><input type="text" name="bairro" id="bairrolocatario2"></p>
+                        <p><label for="cidadelocatario2">Cidade: </label><input type="text" name="cidade" id="cidadelocatario2" placeholder="Ex.: Jaboatão dos Guararapes"></p>
+                        <p><label for="estadolocatario2">Estado: </label><input type="text" name="estado" id="estadolocatario2"></p>
+                        <p><label for="ceplocatario2">CEP: </label><input type="text" name="cep" id="ceplocatario2" class="cep2" maxlength="10"></p>
+                    </fieldset>
+                    <fieldset id="contato_locatario2">
+                        <legend>Contato</legend>
+                        <p>Contato: <input type="text" name="ddd" id="dddlocatario2" class="ddd2" maxlength="3" size="1" placeholder="DDD"> <input type="text" name="contato2" class="contato2" id="contatolocatario2" maxlength="10" placeholder="00000-0000"></p>
+                        <p><label for="imaillocatario2">Imail: </label><input type="email" name="imail" id="imaillocatario2"></p>
+                    </fieldset>
+                </aside>
+                <button id="remove" type="button" class="button">
                     <img src="imagens/remover_preto.png" alt=""> Remover Locatario
                 </button>
             </fieldset>
@@ -130,7 +135,7 @@
                 <p><label for="valor">Valor do aluguel: </label><input type="number" name="valor" id="valor"></p>
                 <p><label for="valorescrito">Valor (escrito): </label><input type="text" name="valor" id="valorescrito"></p>
             </fieldset>
-            <input type="button" value="ENVIAR" onclick="doc()">
+            <input type="button" class="botao" value="ENVIAR" onclick="doc()">
             <input type="reset" class="botao" value="LIMPAR">
         </form>
         

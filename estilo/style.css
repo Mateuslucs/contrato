@@ -21,6 +21,12 @@ strong{
 button {
     display: block;
 }
+.button {
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0.096);
+    border-color: rgba(0, 0, 0, 0.425);
+    border-radius: 10px;
+}
 #add {
     font-size: 1em;
 }
@@ -64,7 +70,7 @@ fieldset {
 #dado_locador > p.radio {
     display: block;
 }
-#dado_locatario1{
+#dado_locatario1, #dado_locatario2{
     display: inline-grid;
     margin-top: 0px;
     padding-top: 5px;
@@ -73,12 +79,13 @@ aside {
     display: inline-grid;
     
 }
-#endereço_locatario1 {
+#endereço_locatario1, #endereço_locatario2 {
     width: 297px;
 }
-#endereço_locatario1 > p, #dado_locatario1 > p, #contato_locatario1 > p, #dado_locador > p{
+#endereço_locatario1 > p, #dado_locatario1 > p, #contato_locatario1 > p, #dado_locador > p, #endereço_locatario2 > p, #dado_locatario2 > p, #contato_locatario > p{
     margin: 5px 0px 5px;
 }
-#numerolocatario1 {
+#numerolocatario1, #numerolocatario2 {
     width: 40px;
 }
+
