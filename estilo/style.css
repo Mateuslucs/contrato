@@ -85,7 +85,7 @@ aside {
 #endereço_locatario1 > p, #dado_locatario1 > p, #contato_locatario1 > p, #dado_locador > p, #endereço_locatario2 > p, #dado_locatario2 > p, #contato_locatario > p{
     margin: 5px 0px 5px;
 }
-#numerolocatario1, #numerolocatario2 {
+.numero {
     width: 40px;
 }
 
