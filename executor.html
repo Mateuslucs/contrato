@@ -98,39 +98,40 @@
                     <img src="imagens/remover_preto.png" alt=""> Remover Locatario
                 </button>
             </fieldset>
-            <fieldset>
+            <fieldset id="dado_caucao">
                 <legend>CAUÇÃO</legend>
                 <P><label for="caucao">Valor da caução: <br></label><input type="number" name="valor" id="caucao"></P>
                 <p><label for="caucaoescrito">Valor escrito: <br></label><input type="text" name="valor" id="caucaoescrito"></p>
             </fieldset>
-            <fieldset>
+            <fieldset id="dado_imovel">
                 <legend>Imóvel</legend>
                 <p><label for="residencia">Residencial: <br></label><input type="text" name="residencia" id="residencia"></p>
-                <p><label for="apt">Apartamento: <br></label><input type="text" name="apt" id="apt" size="3"></p> <p><label for="bloco">Bloco: <br></label><input type="text" name="bloco" id="bloco" size="3"></p>
+                <p><label for="apt">Apartamento: <br></label><input type="text" name="apt" id="apt" ></p> <p><label for="bloco">Bloco: <br></label><input type="text" name="bloco" id="bloco" size="3"></p>
                 <p><label for="rua">Rua: <br></label><input type="text" name="rua" id="rua"></p><p><label for="numero">Nº: <br></label><input type="number" name="rua" id="numero" class="numero"></p>
                 <p><label for="bairro">Bairro: <br></label><input type="text" name="bairro" id="bairro"></p>
                 <p><label for="cidade">Cidade: <br></label><input type="text" name="cidade" id="cidade"></p>
                 <p><label for="estado">Estado: <br></label><input type="text" name="estado" id="estado"></p>
                 <p><label for="cep">CEP: <br></label><input type="text" name="cep" id="cep" class="cepimovel" maxlength="10"></p>
             </fieldset>
-            <fieldset>
+            <fieldset id="prazo_locacao">
                 <legend>PRAZO DE LOCAÇÃO</legend>
                 <p><label for="prazodelocaçao">prazo de locação: </label><input type="number" name="prazo" id="prazodelocaçao" placeholder="Meses"></p>
                 <p><label for="prazodelocaçaoescrito">prazo de locação (escrito): </label><input type="text" name="prazo" id="prazodelocaçaoescrito"></p>
-                <fieldset>
+                <fieldset id="inicio">
                     <legend>Início</legend>
-                    <p><label for="diadoprazoin">Dia do prazo: </label><input type="number" name="dia" id="diadoprazoin"> <label for="diaprazoin_escrito">Escrito: <input type="text" name="dia_escrito" id="diaprazoin_escrito"></label></p>
+                    <p><label for="diadoprazoin">Dia do prazo: </label><input type="number" name="dia" id="diadoprazoin"></p> 
+                    <p><label for="diaprazoin_escrito">Escrito: </label><input type="text" name="dia_escrito" id="diaprazoin_escrito"></p>
                     <p><label for="mesdoprazoin">Mês do prazo: </label><input type="text" name="mes" id="mesdoprazoin" placeholder="Ex.: Janeiro"></p>
                     <p><label for="anodoprazoin">Ano do prazo: </label><input type="number" name="ano" id="anodoprazoin"></p>
                 </fieldset>
-                <fieldset>
+                <fieldset id="fim">
                     <legend>Fim</legend>
                     <p><label for="diadoprazofim">Dia do prazo: </label><input type="number" name="dia" id="diadoprazofim"></p>
                     <p><label for="mesdoprazofim">Mês do prazo: </label><input type="text" name="mes" id="mesdoprazofim" placeholder="Ex.: Janeiro"></p>
                     <p><label for="anodoprazofim">Ano do prazo: </label><input type="number" name="ano" id="anodoprazofim"></p>
                 </fieldset>
             </fieldset>
-            <fieldset>
+            <fieldset id="aluguel_mensal">
                 <legend>ALUGUEL MENSAL</legend>
                 <p><label for="valor">Valor do aluguel: </label><input type="number" name="valor" id="valor"></p>
                 <p><label for="valorescrito">Valor (escrito): </label><input type="text" name="valor" id="valorescrito"></p>

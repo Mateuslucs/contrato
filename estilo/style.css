@@ -73,7 +73,7 @@ fieldset {
 #dado_locatario1, #dado_locatario2{
     display: inline-grid;
     margin-top: 0px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 aside {
     display: inline-grid;
@@ -82,10 +82,28 @@ aside {
 #endereço_locatario1, #endereço_locatario2 {
     width: 297px;
 }
-#endereço_locatario1 > p, #dado_locatario1 > p, #contato_locatario1 > p, #dado_locador > p, #endereço_locatario2 > p, #dado_locatario2 > p, #contato_locatario > p{
-    margin: 5px 0px 5px;
+#dado_locatario1 > p, #dado_locatario2 > p {
+    margin: 10px 0px 10px;
+}
+#endereço_locatario1 > p, #contato_locatario1 > p, #dado_locador > p, #endereço_locatario2 > p, #contato_locatario2 > p{
+    margin: 15px 0px 15px;
 }
 .numero {
     width: 40px;
+}
+
+#dado_imovel > p, #dado_caucao > p, #aluguel_mensal > p {
+    display: inline-grid;
+    margin: 5px;
+}
+#inicio, #fim {
+    display: inline-grid;
+}
+#inicio > p, #fim > p {
+    margin: 10px;
+}
+
+#fim {
+    height: 180px;
 }
 
