@@ -236,13 +236,8 @@ contato_locatario2.addEventListener('keypress', function(e){
 function doc (){
 
     /*Verificando Estado civil LOCADOR*/
-    let casadolocador = document.getElementById('casadolocador')
-    let estadocivil_locador = ''
-    if(casadolocador.checked){
-        estadocivil_locador = 'Casado(a)'
-    }else {
-        estadocivil_locador = 'Solteiro(a)'
-    }
+    let estadocivillocador = document.getElementById('estadocivillocador')
+    let estadocivil_locador = estadocivillocador.value
 
     /*Verificando Estado civil LOCATARIO1*/
     let casadolocatario1 = document.getElementById('casadolocatario1')
@@ -311,7 +306,10 @@ function doc (){
     }
     
     let estadociviltx_locador = document.querySelectorAll('.estadocivillocador')
-    if(estadocivil_locador == 'Solteiro(a)'){
+    estadociviltx_locador.forEach(ele => {
+        ele.textContent = `${estadocivil_locador}`
+    })
+    /*if(estadocivil_locador == 'Solteiro(a)'){
         estadociviltx_locador.forEach(ele => {
             ele.textContent = `Solteiro(a)`
         })
@@ -319,7 +317,7 @@ function doc (){
         estadociviltx_locador.forEach(ele => {
             ele.textContent = 'Casado(a)'
         })
-    }
+    }*/
     let sexotx_locador = document.querySelectorAll('.sexolocador')
     let sexoftx_locador = document.querySelectorAll('.sexoflocador')
     if(sexo_locador == 'feminino'){
