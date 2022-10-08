@@ -8,6 +8,7 @@ let local_locador = document.getElementById('locallocador')
 let cpf_locador = document.getElementById('cpflocador')
 let nacionalidade_locador = document.getElementById('nacionalidadelocador')
 let profissao_locador = document.getElementById('profissaolocador')
+let estadocivil_locador = document.getElementById('estadocivillocador')
 
 /*DADOS DO LOCATARIO 1*/
 
@@ -17,6 +18,7 @@ let orgao_locatario1 = document.getElementById('oglocatario1')
 let local_locatario1 = document.getElementById('locallocatario1')
 let cpf_locatario1 = document.getElementById('cpflocatario1')
 let nacionalidade_locatario1 = document.getElementById('nacionalidadelocatario1')
+let estadocivil_locatario1 = document.getElementById('estadocivillocatario1')
 let profissao_locatario1 = document.getElementById('profissaolocatario1')
 let rua_locatario1 = document.getElementById('rualocatario1')
 let numero_locatario1 = document.getElementById('numerolocatario1')
@@ -37,6 +39,7 @@ let orgao_locatario2 = document.getElementById('oglocatario2')
 let local_locatario2 = document.getElementById('locallocatario2')
 let cpf_locatario2 = document.getElementById('cpflocatario2')
 let nacionalidade_locatario2 = document.getElementById('nacionalidadelocatario2')
+let estadocivil_locatario2 = document.getElementById('estadocivillocatario2')
 let profissao_locatario2 = document.getElementById('profissaolocatario2')
 let rua_locatario2 = document.getElementById('rualocatario2')
 let numero_locatario2 = document.getElementById('numerolocatario2')
@@ -235,27 +238,10 @@ contato_locatario2.addEventListener('keypress', function(e){
 
 function doc (){
 
-    /*Verificando Estado civil LOCADOR*/
-    let estadocivillocador = document.getElementById('estadocivillocador')
-    let estadocivil_locador = estadocivillocador.value
-
-    /*Verificando Estado civil LOCATARIO1*/
-    let casadolocatario1 = document.getElementById('casadolocatario1')
-    let estadocivil_locatario1 = ''
-    if(casadolocatario1.checked){
-        estadocivil_locatario1 = 'Casado(a)'
-    }else {
-        estadocivil_locatario1 = 'Solteiro(a)'
-    }
-
     /*Verificando Estado civil LOCATARIO2*/
-    let casadolocatario2 = document.getElementById('casadolocatario2')
-    let estadocivil_locatario2 = ''
-    if(casadolocatario2.checked){
-        estadocivil_locatario2 = 'Casado(a)'
-    }else {
-        estadocivil_locatario2 = 'Solteiro(a)'
-    }
+    
+
+    
 
     /*Verificando o sexo do LOCADOR*/
     let feminino_locador = document.getElementById('femininolocador')
@@ -286,7 +272,7 @@ function doc (){
 
     /*Preenchendo dados LOCADOR*/
 
-    /*local onde vai preenchido*/
+    /*local onde vai ser preenchido*/
     let nometx_locador = document.querySelectorAll('.locadortx')
     let rgtx_locador = document.querySelectorAll('.rglocador')
     let ogtx_locador = document.querySelectorAll('.oglocador')
@@ -294,10 +280,11 @@ function doc (){
     let cpftx_locador = document.querySelectorAll('.cpflocador')
     let nacionalidadetx_locador = document.querySelectorAll('.nacionalidadelocador')
     let profissaotx_locador = document.querySelectorAll('.profissaolocador')
+    let estadociviltx_locador = document.querySelectorAll('.estadocivillocador')
 
-    let lista_locador = [nome_locador.value.toUpperCase(), rg_locador.value, orgao_locador.value.toUpperCase(), local_locador.value.toUpperCase(), cpf_locador.value, nacionalidade_locador.value, profissao_locador.value]
+    let lista_locador = [nome_locador.value.toUpperCase(), rg_locador.value, orgao_locador.value.toUpperCase(), local_locador.value.toUpperCase(), cpf_locador.value, nacionalidade_locador.value, profissao_locador.value, estadocivil_locador.value]
 
-    let lista_locadortx = [nometx_locador, rgtx_locador, ogtx_locador, localtx_locador, cpftx_locador, nacionalidadetx_locador, profissaotx_locador]
+    let lista_locadortx = [nometx_locador, rgtx_locador, ogtx_locador, localtx_locador, cpftx_locador, nacionalidadetx_locador, profissaotx_locador, estadociviltx_locador]
 
     for(var i = 0; i < lista_locador.length; i++){
         lista_locadortx[i].forEach(ele => {
@@ -305,19 +292,6 @@ function doc (){
         })
     }
     
-    let estadociviltx_locador = document.querySelectorAll('.estadocivillocador')
-    estadociviltx_locador.forEach(ele => {
-        ele.textContent = `${estadocivil_locador}`
-    })
-    /*if(estadocivil_locador == 'Solteiro(a)'){
-        estadociviltx_locador.forEach(ele => {
-            ele.textContent = `Solteiro(a)`
-        })
-    }else {
-        estadociviltx_locador.forEach(ele => {
-            ele.textContent = 'Casado(a)'
-        })
-    }*/
     let sexotx_locador = document.querySelectorAll('.sexolocador')
     let sexoftx_locador = document.querySelectorAll('.sexoflocador')
     if(sexo_locador == 'feminino'){
@@ -354,9 +328,9 @@ function doc (){
     let imailtx_locatario1 = document.querySelectorAll('.imaillocatario1')
     let estadociviltx_locatario1 = document.querySelectorAll('.estadocivillocatario1')
 
-    let lista_locatario1 = [nome_locatario1.value.toUpperCase(), rg_locatario1.value, orgao_locatario1.value.toUpperCase(), local_locatario1.value.toUpperCase(), cpf_locatario1.value, nacionalidade_locatario1.value ,profissao_locatario1.value, rua_locatario1.value, numero_locatario1.value, complemento_locatario1.value,bairro_locatario1.value, cidade_locatario1.value,estado_locatario1.value.toUpperCase(), cep_locatario1.value, ddd_locatario1.value, contato_locatario1.value, imail_locatario1.value]
+    let lista_locatario1 = [nome_locatario1.value.toUpperCase(), rg_locatario1.value, orgao_locatario1.value.toUpperCase(), local_locatario1.value.toUpperCase(), cpf_locatario1.value, nacionalidade_locatario1.value, estadocivil_locatario1.value ,profissao_locatario1.value, rua_locatario1.value, numero_locatario1.value, complemento_locatario1.value,bairro_locatario1.value, cidade_locatario1.value,estado_locatario1.value.toUpperCase(), cep_locatario1.value, ddd_locatario1.value, contato_locatario1.value, imail_locatario1.value]
 
-    let lista_locatario1tx = [nometx_locatario1, rgtx_locatario1, ogtx_locatario1, localtx_locatario1, cpftx_locatario1, nacionalidadetx_locatario1, profissaotx_locatario1, ruatx_locatario1, numerotx_locatario1, complementotx_locatario1,bairrotx_locatario1, cidadetx_locatario1, estadotx_locatario1, ceptx_locatario1, dddtx_locatario1, contatotx_locatario1, imailtx_locatario1]
+    let lista_locatario1tx = [nometx_locatario1, rgtx_locatario1, ogtx_locatario1, localtx_locatario1, cpftx_locatario1, nacionalidadetx_locatario1,estadociviltx_locatario1, profissaotx_locatario1, ruatx_locatario1, numerotx_locatario1, complementotx_locatario1,bairrotx_locatario1, cidadetx_locatario1, estadotx_locatario1, ceptx_locatario1, dddtx_locatario1, contatotx_locatario1, imailtx_locatario1]
 
     for(var i = 0; i < lista_locatario1.length; i++){
         lista_locatario1tx[i].forEach(ele => {
@@ -376,15 +350,7 @@ function doc (){
         })
     }
     
-    if(estadocivil_locatario1 == 'Solteiro(a)'){
-        estadociviltx_locatario1.forEach(ele => {
-            ele.textContent = `Solteiro(a)`
-        })
-    }else {
-        estadociviltx_locatario1.forEach(ele => {
-            ele.textContent = 'Casado(a)'
-        })
-    }
+   
 
     let sexotx_locatario1 = document.querySelectorAll('.sexolocatario1')
     let sexoftx_locatario1 = document.querySelectorAll('.sexoflocatario1')
@@ -409,6 +375,7 @@ function doc (){
     let localtx_locatario2 = document.querySelectorAll('.locallocatario2')
     let cpftx_locatario2 = document.querySelectorAll('.cpflocatario2')
     let nacionalidadetx_locatario2 = document.querySelectorAll('.nacionalidadelocatario2')
+    let estadociviltx_locatario2 = document.querySelectorAll('.estadocivillocatario2')
     let profissaotx_locatario2 = document.querySelectorAll('.profissaolocatario2')
     let ruatx_locatario2 = document.querySelectorAll('.rualocatario2')
     let numerotx_locatario2 = document.querySelectorAll('.numerolocatario2')
@@ -420,11 +387,11 @@ function doc (){
     let contatotx_locatario2 = document.querySelectorAll('.contatolocatario2')
     let complementotx_locatario2 = document.querySelectorAll('.residencialocatario2')
     let imailtx_locatario2 = document.querySelectorAll('.imaillocatario2')
-    let estadociviltx_locatario2 = document.querySelectorAll('.estadocivillocatario2')
+    
 
-    let lista_locatario2 = [nome_locatario2.value.toUpperCase(), rg_locatario2.value, orgao_locatario2.value.toUpperCase(), local_locatario2.value.toUpperCase(), cpf_locatario2.value, nacionalidade_locatario2.value ,profissao_locatario2.value, rua_locatario2.value, numero_locatario2.value, complemento_locatario2.value, bairro_locatario2.value, cidade_locatario2.value, estado_locatario2.value.toUpperCase(), cep_locatario2.value, ddd_locatario2.value, contato_locatario2.value, imail_locatario2.value]
+    let lista_locatario2 = [nome_locatario2.value.toUpperCase(), rg_locatario2.value, orgao_locatario2.value.toUpperCase(), local_locatario2.value.toUpperCase(), cpf_locatario2.value, nacionalidade_locatario2.value, estadocivil_locatario2.value, profissao_locatario2.value, rua_locatario2.value, numero_locatario2.value, complemento_locatario2.value, bairro_locatario2.value, cidade_locatario2.value, estado_locatario2.value.toUpperCase(), cep_locatario2.value, ddd_locatario2.value, contato_locatario2.value, imail_locatario2.value]
 
-    let lista_locatario2tx = [nometx_locatario2, rgtx_locatario2, ogtx_locatario2, localtx_locatario2, cpftx_locatario2, nacionalidadetx_locatario2, profissaotx_locatario2, ruatx_locatario2, numerotx_locatario2, complementotx_locatario2, bairrotx_locatario2, cidadetx_locatario2, estadotx_locatario2, ceptx_locatario2, dddtx_locatario2, contatotx_locatario2, imailtx_locatario2]
+    let lista_locatario2tx = [nometx_locatario2, rgtx_locatario2, ogtx_locatario2, localtx_locatario2, cpftx_locatario2, nacionalidadetx_locatario2, estadociviltx_locatario2, profissaotx_locatario2, ruatx_locatario2, numerotx_locatario2, complementotx_locatario2, bairrotx_locatario2, cidadetx_locatario2, estadotx_locatario2, ceptx_locatario2, dddtx_locatario2, contatotx_locatario2, imailtx_locatario2]
 
     for(var i = 0; i < lista_locatario2.length; i++){
         lista_locatario2tx[i].forEach(ele => {
