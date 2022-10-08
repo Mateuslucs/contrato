@@ -19,17 +19,26 @@
                     <legend>Dados</legend>
                     <p><label for="locador">Nome: <br></label><input type="text" name="nome" id="locador"></p>
                     <p><label for="rglocador">RG: <br></label><input type="text" name="rg" id="rglocador" class="rg" autocomplete="off"></p>
-                    <p><label for="oglocador">Orgão expedidor: <br></label><input type="text" name="og" id="oglocador"  placeholder="Ex.: SDS"></p>
+                    <p><label for="oglocador">Orgão expedidor: <br></label><input type="text" name="og" id="oglocador"  placeholder="Ex.: SDS" list="lista_og"></p>
+                    <datalist id="lista_og">
+                        <option value="SDS">Secretaria de Defesa Social</option>
+                        <option value="SSP">Secretaria de Segurança Pública</option>
+                        <option value="SJC">Secretaria de Justiça e Cidadania</option>
+                        <option value="SJT">Secretaria de Justiça e Trabalho</option>
+                    </datalist>
                     <p><label for="locallocador">Estado da expedição: <br></label><input type="text" name="local" id="locallocador" placeholder="Ex.: PE"></p>
                     <p><label for="cpflocador">CPF: <br></label><input type="text" name="cpf" id="cpflocador" class="cpflocador" maxlength="14" autocomplete="off"></p>
-                    <p><label for="nacionalidadelocador">Nacionalidade: <br></label><input type="text" name="nacionalidade" id="nacionalidadelocador" placeholder="Ex.: brasileiro"></p>
+                    <p><label for="nacionalidadelocador">Nacionalidade: <br></label><input type="text" name="nacionalidade" id="nacionalidadelocador" placeholder="Ex.: brasileiro" list="lista_nacionalidade"></p>
+                    <datalist id="lista_nacionalidade">
+                        <option>Brasileiro(a)</option>
+                    </datalist>
                     <p><label for="profissaolocador">Profissão: <br></label><input type="text" name="profissao" id="profissaolocador"></p>
                     <div id="radio">
                         <p class="radio">Sexo: <input type="radio" name="sexolocador" id="masculinolocador" checked><label for="masculinolocador" >Masculino</label> <input type="radio" name="sexolocador" id="femininolocador"><label for="femininolocador">Feminino</label></p>
                         <p class="radio">Estado civil: <select name="estadocivillocador" id="estadocivillocador">
-                            <option value="Casado(a)">Casado</option>
-                            <option value="Divorciado(a)">Divorciado</option>
-                            <option value="Solteiro(a)">Solteiro</option>
+                            <option value="Casad">Casado(a)</option>
+                            <option value="Divorciad">Divorciado(a)</option>
+                            <option value="Solteir">Solteiro(a)</option>
                         </select></p>
                     </div>
                 </fieldset>
@@ -40,15 +49,15 @@
                     <legend>Dados</legend>
                     <p><label for="locatario1">Nome: </label><input type="text" name="nome" id="locatario1"></p>
                     <p><label for="rglocatario1">RG: </label><input type="text" name="rg" id="rglocatario1" class="rg" autocomplete="off"></p>
-                    <p><label for="oglocatario1">Orgão expedidor: </label><input type="text" name="og" id="oglocatario1" size="4" placeholder="Ex.: SDS"></p>
+                    <p><label for="oglocatario1">Orgão expedidor: </label><input type="text" name="og" id="oglocatario1" size="6" placeholder="Ex.: SDS" list="lista_og"></p>
                     <p><label for="locallocatario1">Estado da expedição: </label><input type="text" name="local" id="locallocatario1" placeholder="Ex.: PE"></p>
                     <p><label for="cpflocatario1">CPF: </label><input type="text" name="cpf" id="cpflocatario1" class="cpflocatario1" maxlength="14" autocomplete="off"></p>
                     <p>Sexo: <input type="radio" name="sexolocatario1" id="masculinolocatario1" checked><label for="masculinolocatario1" >Masculino</label> <input type="radio" name="sexolocatario1" id="femininolocatario1"><label for="femininolocatario1">Feminino</label></p>
-                    <p><label for="nacionalidadelocatario1">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocatario1"></p>
+                    <p><label for="nacionalidadelocatario1">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocatario1" list="lista_nacionalidade"></p>
                     <p>Estado civil: <select name="estadocivillocatario1" id="estadocivillocatario1">
-                        <option value="Casado(a)">Casado</option>
-                        <option value="Divorciado(a)">Divorciado</option>
-                        <option value="Solteiro(a)">Solteiro</option>
+                        <option value="Casad">Casado(a)</option>
+                        <option value="Divorciad">Divorciado(a)</option>
+                        <option value="Solteir">Solteiro(a)</option>
                     </select></p>
                     <p><label for="profissaolocatario1">Profissão: </label><input type="text" name="profissao" id="profissaolocatario1"></p>
                 </fieldset>
@@ -78,16 +87,18 @@
                     <legend>Dados</legend>
                     <p><label for="locatario2">Nome: </label><input type="text" name="nome" id="locatario2"></p>
                     <p><label for="rglocatario2">RG: </label><input type="text" name="rg" id="rglocatario2" class="rg" autocomplete="off"></p>
-                    <p><label for="oglocatario2">Orgão expedidor: </label><input type="text" name="og" id="oglocatario2" size="4" placeholder="Ex.: SDS"></p>
+                    <p><label for="oglocatario2">Orgão expedidor: </label><input type="text" name="og" id="oglocatario2" size="6" placeholder="Ex.: SDS" list="lista_og"></p>
                     <p><label for="locallocatario2">Estado da expedição: </label><input type="text" name="local" id="locallocatario2" placeholder="Ex.: PE"></p>
                     <p><label for="cpflocatario2">CPF: </label><input type="text" name="cpf" id="cpflocatario2" class="cpflocatario2" maxlength="14" autocomplete="off"></p>
                     <p>Sexo: <input type="radio" name="sexolocatario2" id="masculinolocatario2" checked><label for="masculinolocatario2" >Masculino</label> <input type="radio" name="sexolocatario2" id="femininolocatario2"><label for="femininolocatario2">Feminino</label></p>
-                    <p><label for="nacionalidadelocatario2">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocatario2"></p>
-                    <p>Estado civil: <select name="estadocivillocatario2" id="estadocivillocatario2">
-                        <option value="Casado(a)">Casado</option>
-                        <option value="Divorciado(a)">Divorciado</option>
-                        <option value="Solteiro(a)">Solteiro</option>
-                    </select></p>
+                    <p><label for="nacionalidadelocatario2">Nacionalidade: </label><input type="text" name="nacionalidade" id="nacionalidadelocatario2" list="lista_nacionalidade"></p>
+                    <p>Estado civil: 
+                        <select name="estadocivillocatario2" id="estadocivillocatario2">
+                            <option value="Casad">Casado(a)</option>
+                            <option value="Divorciad">Divorciado(a)</option>
+                            <option value="Solteir">Solteiro(a)</option>
+                        </select>
+                    </p>
                     <p><label for="profissaolocatario2">Profissão: </label><input type="text" name="profissao" id="profissaolocatario2"></p>
                 </fieldset>
                 <aside>
@@ -131,15 +142,41 @@
                 <p><label for="prazodelocaçaoescrito">prazo de locação (escrito): </label><input type="text" name="prazo" id="prazodelocaçaoescrito"></p>
                 <fieldset id="inicio">
                     <legend>Início</legend>
-                    <p><label for="diadoprazoin">Dia do prazo: </label><input type="number" name="dia" id="diadoprazoin"></p> 
+                    <p><label for="diadoprazoin">Dia do prazo: </label><input type="number" name="dia" id="diadoprazoin"></p>
                     <p><label for="diaprazoin_escrito">Escrito: </label><input type="text" name="dia_escrito" id="diaprazoin_escrito"></p>
-                    <p><label for="mesdoprazoin">Mês do prazo: </label><input type="text" name="mes" id="mesdoprazoin" placeholder="Ex.: Janeiro"></p>
+                    <p><label for="mesdoprazoin">Mês do prazo: <select name="mes" id="mesdoprazoin">
+                        <option value="janeiro">Janeiro</option>
+                        <option value="fevereiro">Fevereiro</option>
+                        <option value="março">Março</option>
+                        <option value="abril">Abril</option>
+                        <option value="maio">Maio</option>
+                        <option value="junho">Junho</option>
+                        <option value="julho">Julho</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="setembro">Setembro</option>
+                        <option value="outubro">Outubro</option>
+                        <option value="novembro">Novembro</option>
+                        <option value="dezembro">Dezembro</option>
+                    </select></p>
                     <p><label for="anodoprazoin">Ano do prazo: </label><input type="number" name="ano" id="anodoprazoin"></p>
                 </fieldset>
                 <fieldset id="fim">
                     <legend>Fim</legend>
                     <p><label for="diadoprazofim">Dia do prazo: </label><input type="number" name="dia" id="diadoprazofim"></p>
-                    <p><label for="mesdoprazofim">Mês do prazo: </label><input type="text" name="mes" id="mesdoprazofim" placeholder="Ex.: Janeiro"></p>
+                    <p><label for="mesdoprazofim">Mês do prazo: </label><select name="mes" id="mesdoprazofim">
+                        <option value="janeiro">Janeiro</option>
+                        <option value="fevereiro">Fevereiro</option>
+                        <option value="março">Março</option>
+                        <option value="abril">Abril</option>
+                        <option value="maio">Maio</option>
+                        <option value="junho">Junho</option>
+                        <option value="julho">Julho</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="setembro">Setembro</option>
+                        <option value="outubro">Outubro</option>
+                        <option value="novembro">Novembro</option>
+                        <option value="dezembro">Dezembro</option>
+                    </select></p>
                     <p><label for="anodoprazofim">Ano do prazo: </label><input type="number" name="ano" id="anodoprazofim"></p>
                 </fieldset>
             </fieldset>
@@ -151,7 +188,6 @@
             <input type="button" class="botao" value="ENVIAR" onclick="doc()">
             <input type="reset" class="botao" value="LIMPAR">
         </form>
-        
     </section>
     <h1 id="teste"></h1>
     <section id="documento">
@@ -288,13 +324,13 @@
         
         
         
-        <div class="item"><strong>ITEM 01: LOCADOR<span class="sexoflocador"></span>: <span class="locadortx"></span></strong>, portador<span class="sexoflocador"></span> da Carteira de Identidade RG nº <span class="rglocador"></span> <span class="oglocador"></span>/<span class="locallocador"></span> e CPF nº <span class="cpflocador"></span>, <span class="nacionalidadelocador"></span>, <span class="estadocivillocador"></span>, <span class="profissaolocador"></span>, residente e domiciliad<span class="sexolocador"></span> nesta capital. Sendo este representad<span class="sexolocador"></span> pela <strong>C.M. IMÓVEIS – CRISTIANO MACÁRIO ALVES</strong>. Nacionalidade: brasileiro, Estado Civil: solteiro, Identidade: 4.709.561 SDS/PE. CPF: 023.694.224-75. C.N.P.J: 36.616.197/0001-35. Número de Inscrição no CRECI: 9789. Endereço: Rua João Fragoso de Medeiros, n.º 1.775, bloco B17, apto 302, Candeias, Jaboatão dos Guararapes/PE. CEP. 54.430-250.</div>
+        <div class="item"><strong>ITEM 01: LOCADOR<span class="sexoflocador"></span>: <span class="locadortx"></span></strong>, portador<span class="sexoflocador"></span> da Carteira de Identidade RG nº <span class="rglocador"></span> <span class="oglocador"></span>/<span class="locallocador"></span> e CPF nº <span class="cpflocador"></span>, <span class="nacionalidadelocador"></span>, <span class="estadocivillocador"></span><span class="sexolocador"></span>, <span class="profissaolocador"></span>, residente e domiciliad<span class="sexolocador"></span> nesta capital. Sendo este representad<span class="sexolocador"></span> pela <strong>C.M. IMÓVEIS – CRISTIANO MACÁRIO ALVES</strong>. Nacionalidade: brasileiro, Estado Civil: solteiro, Identidade: 4.709.561 SDS/PE. CPF: 023.694.224-75. C.N.P.J: 36.616.197/0001-35. Número de Inscrição no CRECI: 9789. Endereço: Rua João Fragoso de Medeiros, n.º 1.775, bloco B17, apto 302, Candeias, Jaboatão dos Guararapes/PE. CEP. 54.430-250.</div>
         
         <div class="item">
             <p></p><strong>ITEM 02:</strong><br>
-            <strong>LOCATÁRI<span class="sexolocatario1"></span> (1): <span class="locatario1"></span></strong>, portador<span class="sexoflocatario1"></span> da Carteira de Identidade RG nº <span class="rglocatario1"></span> <span class="orgaolocatario1"></span>/<span class="locallocatario1"></span> e CPF nº <span class="cpflocatario1"></span>, <span class="nacionalidadelocatario1"></span>, <span class="estadocivillocatario1"></span>, <span class="profissaolocatario1"></span>, residente e domiciliad<span class="sexolocatario1"></span> na <span class="rualocatario1"></span>, nº <span class="numerolocatario1"></span><span class="residencialocatario1"></span> – <span class="bairrolocatario1"></span> - <span class="cidadelocatario1"></span>/<span class="estadolocatario1"></span> CEP: <span class="ceplocatario1"></span>. Contatos: (<span class="dddlocatario1"></span>)<span class="contatolocatario1"></span><span class="imaillocatario1"></span>.</p>
+            <strong>LOCATÁRI<span class="sexolocatario1"></span> (1): <span class="locatario1"></span></strong>, portador<span class="sexoflocatario1"></span> da Carteira de Identidade RG nº <span class="rglocatario1"></span> <span class="orgaolocatario1"></span>/<span class="locallocatario1"></span> e CPF nº <span class="cpflocatario1"></span>, <span class="nacionalidadelocatario1"></span>, <span class="estadocivillocatario1"></span><span class="sexolocatario1"></span>, <span class="profissaolocatario1"></span>, residente e domiciliad<span class="sexolocatario1"></span> na <span class="rualocatario1"></span>, nº <span class="numerolocatario1"></span><span class="residencialocatario1"></span> – <span class="bairrolocatario1"></span> - <span class="cidadelocatario1"></span>/<span class="estadolocatario1"></span> CEP: <span class="ceplocatario1"></span>. Contatos: (<span class="dddlocatario1"></span>)<span class="contatolocatario1"></span><span class="imaillocatario1"></span>.</p>
         
-            <p class="form_locatario2"><strong>LOCATÁRI<span class="sexolocatario2"></span> (2): <span class="locatario2"></span></strong>, portador<span class="sexoflocatario2"></span> da Carteira de Identidade RG nº <span class="rglocatario2"></span> <span class="orgaolocatario2"></span>/<span class="locallocatario2"></span> e CPF nº <span class="cpflocatario2"></span>, <span id="nacionalidadelocatario2"></span>, <span class="estadocivillocatario2"></span>, <span class="profissaolocatario2"></span>, residente e domiciliad<span class="sexolocatario2"></span> na <span class="rualocatario2"></span>, nº <span class="numerolocatario2"></span> <span class="residencialocatario2"></span> – <span class="bairrolocatario2"></span> - <span class="cidadelocatario2"></span>/<span class="estadolocatario2"></span> CEP: <span class="ceplocatario2"></span>. Contatos: (<span class="dddlocatario2"></span>)<span class="contatolocatario2"></span> <span class="imaillocatario2"></span>.</p>
+            <p class="form_locatario2"><strong>LOCATÁRI<span class="sexolocatario2"></span> (2): <span class="locatario2"></span></strong>, portador<span class="sexoflocatario2"></span> da Carteira de Identidade RG nº <span class="rglocatario2"></span> <span class="orgaolocatario2"></span>/<span class="locallocatario2"></span> e CPF nº <span class="cpflocatario2"></span>, <span id="nacionalidadelocatario2"></span>, <span class="estadocivillocatario2"></span><span class="sexolocatario2"></span>, <span class="profissaolocatario2"></span>, residente e domiciliad<span class="sexolocatario2"></span> na <span class="rualocatario2"></span>, nº <span class="numerolocatario2"></span> <span class="residencialocatario2"></span> – <span class="bairrolocatario2"></span> - <span class="cidadelocatario2"></span>/<span class="estadolocatario2"></span> CEP: <span class="ceplocatario2"></span>. Contatos: (<span class="dddlocatario2"></span>)<span class="contatolocatario2"></span> <span class="imaillocatario2"></span>.</p>
         </div>
         
         <div class="item"><strong>ITEM 03: CAUÇÃO:</strong> O valor será de R$<span class="caucao"></span> (<span class="caucaoescrito"></span>) a ser depositado na conta da <strong>LOCADORA</strong>, qual seja <strong>banco Neon, agencia 0655; conta corrente 13133326-7, tendo como favorecido: CRISTIANO MACÁRIO ALVES, PIX CPF: 023.694.224-75, que no final da locação será devolvido para as LOCATARIAS após vistoria de saída e sem nenhum débitos.</strong></div>
