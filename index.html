@@ -13,7 +13,7 @@
         <header>
             <h1>Dados para o documento</h1>
         </header>
-        <form action="" method="post">
+        <form action="php/documento.php" method="post">
             <fieldset>
                 <legend>LOCADOR</legend>
                 <fieldset id="dado_locador">
@@ -143,9 +143,9 @@
                 <p><label for="prazodelocaçaoescrito">prazo de locação (escrito): </label><input type="text" name="prazo" id="prazodelocaçaoescrito"></p>
                 <fieldset id="inicio">
                     <legend>Início</legend>
-                    <p><label for="diadoprazoin">Dia do prazo: </label><input type="number" name="dia" id="diadoprazoin"></p>
-                    <p><label for="diaprazoin_escrito">Escrito: </label><input type="text" name="dia_escrito" id="diaprazoin_escrito"></p>
-                    <p><label for="mesdoprazoin">Mês do prazo: <select name="mes" id="mesdoprazoin">
+                    <p><label for="diadoprazoin">Dia do prazo: </label><input type="number" name="diadoprazoin" id="diadoprazoin"></p>
+                    <p><label for="diaprazoin_escrito">Escrito: </label><input type="text" name="diaprazoin_escrito" id="diaprazoin_escrito"></p>
+                    <p><label for="mesdoprazoin">Mês do prazo: <select name="mesdoprazoin" id="mesdoprazoin">
                         <option value="janeiro">Janeiro</option>
                         <option value="fevereiro">Fevereiro</option>
                         <option value="março">Março</option>
@@ -159,12 +159,12 @@
                         <option value="novembro">Novembro</option>
                         <option value="dezembro">Dezembro</option>
                     </select></p>
-                    <p><label for="anodoprazoin">Ano do prazo: </label><input type="number" name="ano" id="anodoprazoin"></p>
+                    <p><label for="anodoprazoin">Ano do prazo: </label><input type="number" name="anodoprazoin" id="anodoprazoin"></p>
                 </fieldset>
                 <fieldset id="fim">
                     <legend>Fim</legend>
-                    <p><label for="diadoprazofim">Dia do prazo: </label><input type="number" name="dia" id="diadoprazofim"></p>
-                    <p><label for="mesdoprazofim">Mês do prazo: </label><select name="mes" id="mesdoprazofim">
+                    <p><label for="diadoprazofim">Dia do prazo: </label><input type="number" name="diadoprazofim" id="diadoprazofim"></p>
+                    <p><label for="mesdoprazofim">Mês do prazo: </label><select name="mesdoprazofim" id="mesdoprazofim">
                         <option value="janeiro">Janeiro</option>
                         <option value="fevereiro">Fevereiro</option>
                         <option value="março">Março</option>
@@ -178,7 +178,7 @@
                         <option value="novembro">Novembro</option>
                         <option value="dezembro">Dezembro</option>
                     </select></p>
-                    <p><label for="anodoprazofim">Ano do prazo: </label><input type="number" name="ano" id="anodoprazofim"></p>
+                    <p><label for="anodoprazofim">Ano do prazo: </label><input type="number" name="anodoprazofim" id="anodoprazofim"></p>
                 </fieldset>
             </fieldset>
             <fieldset id="aluguel_mensal">
@@ -188,12 +188,12 @@
             </fieldset>
             <input type="button" class="botao" value="ENVIAR" onclick="doc()">
             <input type="reset" class="botao" value="LIMPAR">
+            <input type="submit" value="baixar">
         </form>
     </section>
-    <h1 id="teste"></h1>
     <section id="documento">
         <header>
-            <h1 >CONTRATO DE LOCAÇÃO</h1>
+            <h1>CONTRATO DE LOCAÇÃO</h1>
             <h1>RESIDENCIAL</h1>
         </header>
         

@@ -297,6 +297,9 @@ function doc (){
             ele.textContent = `a`
         })
     }else {
+        sexoftx_locador.forEach(ele => {
+            ele.textContent = ''
+        })
         sexotx_locador.forEach(ele => {
             ele.textContent = 'o'
         })
@@ -417,6 +420,9 @@ function doc (){
             ele.textContent = `a`
         })
     }else {
+        sexoftx_locatario2.forEach(ele => {
+            ele.textContent = ''
+        })
         sexotx_locatario2.forEach(ele => {
             ele.textContent = 'o'
         })
