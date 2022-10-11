@@ -3,3 +3,11 @@
 section#formulario {
     display: none;
 }
+p.assinatura {
+    margin-top: 70px;
+}
+img {
+    margin: auto;
+    display: block;
+}
+

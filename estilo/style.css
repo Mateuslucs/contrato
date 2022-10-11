@@ -45,6 +45,9 @@ h1 {
 }
 h4 {
     text-align: right;
+    margin-bottom: 70px;
+    text-decoration: underline;
+    font-weight: bold;
 }
 #assinatura, .cris {
     padding: 5px;
@@ -105,5 +108,8 @@ aside {
 
 #fim {
     height: 180px;
+}
+img {
+    display: none;
 }
 
