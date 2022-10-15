@@ -502,7 +502,7 @@ function doc (){
     let mes_atualnumerofim = document.querySelectorAll('.mesdoprazonumfim')
     
     for(var i = 0; i < meses.length; i++){
-        if(i > 9){
+        if(i > 8){
             if(mes_prazo_inicio.value == meses[i]){
                 mes_atualnumeroin.forEach(ele => {
                     ele.textContent = `${i+1}`
