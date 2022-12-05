@@ -1041,9 +1041,6 @@
 
         let total_registros = document.getElementsByClassName('sm_counter_total')[0].innerText;
 
-        let arr = array(
-            "merda" = "oi",
-        )
         
         let listaPagar = [];
         let listaReceber = [];
@@ -1052,61 +1049,112 @@
         diferenca.textContent = "0,00";
         
     <?php
-    for($i = 0; $i < 3; $i++){
+
+    $rowcount = 0;
+    
+    $servidor = "142.93.112.180";
+    $usuario = "webHook";
+    $senha = "Cronos@065-V8";
+    $dbname = "hortifrios";
+
+    $conexao = mysqli_connect($servidor,$usuario,$senha,$dbname);
+    if(!$conexao){
+        die("Houve um problema: ".mysqli_connect_error());
+    }
+
+    $sql = "SELECT 'Contas a Pagar' AS tipo, idContasPagar AS idInterno, c.nomeFiscal, cp.codigo_lancamento_omie, cat.descricao, cp.valorDocumento, cp.data_emissao, cp.data_previsao, cp.data_vencimento, cc.banco FROM contasPagar cp
+    LEFT JOIN clientes         c ON c.idExterno = cp.codigo_cliente_fornecedor
+    LEFT JOIN categorias     cat ON cat.codigo = cp.codigo_categoria
+    LEFT JOIN contacorrente   cc ON cc.nCodCC = cp.id_conta_corrente
+    WHERE excluido<>'S' 
+    UNION
+    SELECT 'Contas a Receber' AS tipo, idContasReceber AS idInterno, c.nomeFiscal, cr.codigo_lancamento_omie, cat.descricao, cr.valorDocumento, cr.data_emissao, cr.data_previsao, cr.data_vencimento,  cc.banco
+    FROM contasReceber cr
+    LEFT JOIN clientes         c ON c.idExterno = cr.codigo_cliente_fornecedor
+    LEFT JOIN categorias     cat ON cat.codigo = cr.codigo_categoria
+    LEFT JOIN contacorrente   cc ON cc.nCodCC = cr.id_conta_corrente
+    WHERE excluido<>'S'";
+
+    if ($result = mysqli_query($conexao, $sql)) {
+        $rowcount = mysqli_num_rows( $result );
+
+    }
+
+    mysqli_close($conexao);
+
+    
+    
+
+    for($i = 0; $i < $rowcount; $i++){
         $linha = $i+1;
 
         echo "
         document.getElementById('NM_ck_run$linha').onclick = function(){
             let value = document.getElementById('id_sc_field_valordocumento_$linha').innerText
-            let valor = parseFloat(value.replace(',','.'))
+            let valor = value.replace(',','.')+'l$linha'
 
             let tipo = document.getElementById('id_sc_field_tipo_$linha').innerText
             let pos = listaPagar.indexOf(valor)
 
-            for(let i = 0; i < ){
-                if(tipo == 'Contas a Pagar'){
-                    if(document.getElementById('NM_ck_run$linha').checked && ele[0].indexOf($linha) == -1){
-                        listaPagar.push([$linha,valor])
-                        let soma = 0
-                        listaPagar.forEach(ele => {
-                            soma+=ele[1]
-                        })
-                        pagar.textContent = soma.toFixed(2).replace('.',',')
-                    }else {
-                        listaPagar.splice(listaPagar.indexOf(ele),1)
-                        let soma = 0
-                        listaPagar.forEach(ele => {
-                            soma+=ele[1]
-                        })
-                        pagar.textContent = soma.toFixed(2).replace('.',',')
-                    }
-                }else{
-                    if(document.getElementById('NM_ck_run$linha').checked && ele[0].indexOf($linha) == -1){
-                        listaReceber.push([$linha,valor])
-                        let soma = 0
-                        listaReceber.forEach(ele => {
-                            soma+=ele[1]
-                        })
-                        receber.textContent = soma.toFixed(2).replace('.',',')
-                    }else {
-                        listaReceber.splice(listaPagar.indexOf(ele),1)
-                        let soma = 0
-                        listaReceber.forEach(ele => {
-                            soma+=ele[1]
-                        })
-                        receber.textContent = soma.toFixed(2).replace('.',',')
-                    }
+            
+
+            if(tipo == 'Contas a Pagar'){
+
+                if(document.getElementById('NM_ck_run$linha').checked && pos == -1){
+                    listaPagar.push(valor)
+                    let soma = 0
+                    listaPagar.forEach(ele => {
+                        let final = ele.indexOf('l')
+                        let v = ele.slice(0,final)
+                        soma+=parseFloat(v)
+                    })
+                    pagar.textContent = soma.toFixed(2).replace('.',',')
+                }else {
+                    listaPagar.splice(pos,1)
+                    let soma = 0
+                    listaPagar.forEach(ele => {
+                        let final = ele.indexOf('l')
+                        let v = ele.slice(0,final)
+                        soma+=parseFloat(v)
+                    })
+                    pagar.textContent = soma.toFixed(2).replace('.',',')
+                }
+            }else{
+
+                if(document.getElementById('NM_ck_run$linha').checked && pos == -1){
+                    listaReceber.push(valor)
+                    let soma = 0
+                    listaReceber.forEach(ele => {
+                        let final = ele.indexOf('l')
+                        let v = ele.slice(0,final)
+                        soma+=parseFloat(v)
+                    })
+                    receber.textContent = soma.toFixed(2).replace('.',',')
+                }else {
+                    listaReceber.splice(pos,1)
+                    let soma = 0
+                    listaReceber.forEach(ele => {
+                        let final = ele.indexOf('l')
+                        let v = ele.slice(0,final)
+                        soma+=parseFloat(v)
+                    })
+                    receber.textContent = soma.toFixed(2).replace('.',',')
                 }
             }
+            
             
             let total_pagar = 0
             let total_receber = 0
 
             listaReceber.forEach(ele => {
-                total_receber+=ele[1]
+                let final = ele.indexOf('l')
+                let v = ele.slice(0,final)
+                total_receber+=parseFloat(v)
             })
             listaPagar.forEach(ele => {
-                total_pagar+=ele[1]
+                let final = ele.indexOf('l')
+                let v = ele.slice(0,final)
+                total_pagar+=parseFloat(v)
             })
 
             let valor_diferenca = total_pagar - total_receber
@@ -1119,70 +1167,80 @@
         
         
         
-        
-        
         document.getElementById('NM_ck_run0').onclick = function(){
             
             if(document.getElementById('NM_ck_run0').checked){
 
                 listaPagar.length = 0
                 listaReceber.length = 0
+                
+                let box = document.querySelectorAll('.sc-ui-check-run')
+
+                box.forEach(ele => {
+                    ele.checked = true
+                })
+
                 <?php
-                for($i = 0; $i < 3; $i++){
+                for($i = 0; $i < $rowcount; $i++){
                     $linha = $i+1;
 
                     echo "
-                    let value$linha = document.getElementById('id_sc_field_valordocumento_$linha').innerText
-                    let valor$linha = parseFloat(value$linha.replace(',','.'))
+                    if(document.getElementById('NM_ck_run$linha').checked){
 
-                    let tipo$linha = document.getElementById('id_sc_field_tipo_$linha').innerText
-
-                    if(tipo$linha == 'Contas a Pagar'){
-                        if(document.getElementById('NM_ck_run$linha').checked){
-                            listaPagar.push([$linha,valor$linha])
-                        } 
-                    }else{
-                        if(document.getElementById('NM_ck_run$linha').checked){
-                            listaReceber.push([$linha,valor$linha])
-                        } 
+                        let value = document.getElementById('id_sc_field_valordocumento_$linha').innerText
+                        let valor = value.replace(',','.')+'l$linha'
+    
+                        let tipo = document.getElementById('id_sc_field_tipo_$linha').innerText
+                        let pos = listaPagar.indexOf(valor)
+    
+                        if(tipo == 'Contas a Pagar'){
+    
+                            listaPagar.push(valor)
+                            
+                        }else{
+    
+                            listaReceber.push(valor)
+    
+                        }
                     }
                     ";
 
                 }
                 ?>
-                
+
                 let total_pagar = 0
                 let total_receber = 0
 
                 listaReceber.forEach(ele => {
-                    total_receber+=ele[1]
+                    let final = ele.indexOf('l')
+                    let v = ele.slice(0,final)
+                    total_receber+=parseFloat(v)
                 })
                 listaPagar.forEach(ele => {
-                    total_pagar+=ele[1]
+                    let final = ele.indexOf('l')
+                    let v = ele.slice(0,final)
+                    total_pagar+=parseFloat(v)
                 })
 
                 let valor_diferenca = total_pagar - total_receber
-                
+
                 pagar.textContent = total_pagar.toFixed(2).replace('.',',')
                 receber.textContent = total_receber.toFixed(2).replace('.',',')
                 diferenca.textContent = valor_diferenca.toFixed(2).replace('.',',')
 
+
             }else {
+                let box = document.querySelectorAll('.sc-ui-check-run')
+
+                box.forEach(ele => {
+                    ele.checked = false
+                })
                 listaPagar.length = 0
                 listaReceber.length = 0
                 pagar.textContent = "0,00"
                 receber.textContent = "0,00"
                 diferenca.textContent = "0,00"
             }
-        <?php
-        for($i = 0; $i < 3; $i++){
-            $linha = $i+1;
-
-            
-
-            echo "";
-        }
-        ?>
            
         }
         
