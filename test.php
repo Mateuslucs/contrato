@@ -1036,14 +1036,20 @@
     
     <script>
         let pagar = document.getElementById('pagar');
-        let qtd_receber = document.getElementById('qtd_receber');
-        var qtd_diferenca = document.getElementById('qtd_diferenca');
+        let receber = document.getElementById('receber');
+        let diferenca = document.getElementById('diferenca');
 
         let total_registros = document.getElementsByClassName('sm_counter_total')[0].innerText;
 
+        let arr = array(
+            "merda" = "oi",
+        )
         
         let listaPagar = [];
-        pagar.textContent = "0,00"
+        let listaReceber = [];
+        pagar.textContent = "0,00";
+        receber.textContent = "0,00";
+        diferenca.textContent = "0,00";
         
     <?php
     for($i = 0; $i < 3; $i++){
@@ -1053,50 +1059,132 @@
         document.getElementById('NM_ck_run$linha').onclick = function(){
             let value = document.getElementById('id_sc_field_valordocumento_$linha').innerText
             let valor = parseFloat(value.replace(',','.'))
+
+            let tipo = document.getElementById('id_sc_field_tipo_$linha').innerText
             let pos = listaPagar.indexOf(valor)
-            if(document.getElementById('NM_ck_run$linha').checked && pos == -1){
-                listaPagar.push(valor)
-                let soma = 0
-                listaPagar.forEach(ele => {
-                    soma+=ele
-                })
-                pagar.textContent = soma.toFixed(2).replace('.',',')
-            }else {
-                listaPagar.splice(pos,1)
-                let soma = 0
-                listaPagar.forEach(ele => {
-                    soma+=ele
-                })
-                pagar.textContent = soma.toFixed(2).replace('.',',')
+
+            for(let i = 0; i < ){
+                if(tipo == 'Contas a Pagar'){
+                    if(document.getElementById('NM_ck_run$linha').checked && ele[0].indexOf($linha) == -1){
+                        listaPagar.push([$linha,valor])
+                        let soma = 0
+                        listaPagar.forEach(ele => {
+                            soma+=ele[1]
+                        })
+                        pagar.textContent = soma.toFixed(2).replace('.',',')
+                    }else {
+                        listaPagar.splice(listaPagar.indexOf(ele),1)
+                        let soma = 0
+                        listaPagar.forEach(ele => {
+                            soma+=ele[1]
+                        })
+                        pagar.textContent = soma.toFixed(2).replace('.',',')
+                    }
+                }else{
+                    if(document.getElementById('NM_ck_run$linha').checked && ele[0].indexOf($linha) == -1){
+                        listaReceber.push([$linha,valor])
+                        let soma = 0
+                        listaReceber.forEach(ele => {
+                            soma+=ele[1]
+                        })
+                        receber.textContent = soma.toFixed(2).replace('.',',')
+                    }else {
+                        listaReceber.splice(listaPagar.indexOf(ele),1)
+                        let soma = 0
+                        listaReceber.forEach(ele => {
+                            soma+=ele[1]
+                        })
+                        receber.textContent = soma.toFixed(2).replace('.',',')
+                    }
+                }
             }
             
+            let total_pagar = 0
+            let total_receber = 0
+
+            listaReceber.forEach(ele => {
+                total_receber+=ele[1]
+            })
+            listaPagar.forEach(ele => {
+                total_pagar+=ele[1]
+            })
+
+            let valor_diferenca = total_pagar - total_receber
+            
+            diferenca.textContent = valor_diferenca.toFixed(2).replace('.',',')
         }
         ";
     }
     ?>
-
         
-        /*document.getElementById('NM_ck_run1').onclick = function(){
-            let value = document.getElementById('id_sc_field_valordocumento_1').innerText
-            let valor = parseFloat(value.replace(",","."))
-            let pos = listaPagar.indexOf(valor)
-            if(document.getElementById('NM_ck_run1').checked && pos == -1){
-                listaPagar.push(valor)
-                let soma = 0
-                listaPagar.forEach(ele => {
-                    soma+=ele
-                })
-                pagar.textContent = soma.toFixed(2).replace(".",",")
-            }else {
-                listaPagar.splice(pos,1)
-                let soma = 0
-                listaPagar.forEach(ele => {
-                    soma+=ele
-                })
-                pagar.textContent = soma.toFixed(2).replace(".",",")
-            }
+        
+        
+        
+        
+        document.getElementById('NM_ck_run0').onclick = function(){
             
-        }*/
+            if(document.getElementById('NM_ck_run0').checked){
+
+                listaPagar.length = 0
+                listaReceber.length = 0
+                <?php
+                for($i = 0; $i < 3; $i++){
+                    $linha = $i+1;
+
+                    echo "
+                    let value$linha = document.getElementById('id_sc_field_valordocumento_$linha').innerText
+                    let valor$linha = parseFloat(value$linha.replace(',','.'))
+
+                    let tipo$linha = document.getElementById('id_sc_field_tipo_$linha').innerText
+
+                    if(tipo$linha == 'Contas a Pagar'){
+                        if(document.getElementById('NM_ck_run$linha').checked){
+                            listaPagar.push([$linha,valor$linha])
+                        } 
+                    }else{
+                        if(document.getElementById('NM_ck_run$linha').checked){
+                            listaReceber.push([$linha,valor$linha])
+                        } 
+                    }
+                    ";
+
+                }
+                ?>
+                
+                let total_pagar = 0
+                let total_receber = 0
+
+                listaReceber.forEach(ele => {
+                    total_receber+=ele[1]
+                })
+                listaPagar.forEach(ele => {
+                    total_pagar+=ele[1]
+                })
+
+                let valor_diferenca = total_pagar - total_receber
+                
+                pagar.textContent = total_pagar.toFixed(2).replace('.',',')
+                receber.textContent = total_receber.toFixed(2).replace('.',',')
+                diferenca.textContent = valor_diferenca.toFixed(2).replace('.',',')
+
+            }else {
+                listaPagar.length = 0
+                listaReceber.length = 0
+                pagar.textContent = "0,00"
+                receber.textContent = "0,00"
+                diferenca.textContent = "0,00"
+            }
+        <?php
+        for($i = 0; $i < 3; $i++){
+            $linha = $i+1;
+
+            
+
+            echo "";
+        }
+        ?>
+           
+        }
         
         
     </script>
